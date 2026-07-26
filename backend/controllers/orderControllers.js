@@ -61,7 +61,7 @@ const getMyOrders = async(req, res) => {
     try {
         const orders = await Order.find({ user: req.user.id })
         .populate("products.product")
-        .sort({ createAt: -1});
+        .sort({ createdAt: -1});
 
         res.status(200).json({
             success: true,
@@ -130,7 +130,7 @@ const updateOrderStatus = async(req, res) => {
         if(!order) {
             return res.status(404).json({
                 success: false,
-                message:"Oorder Not Found",
+                message:"Order Not Found",
             });
         }
         order.orderStatus = req.body.orderStatus;

@@ -24,11 +24,10 @@ const addProduct = async (req, res) => {
         //Image Path
         //req.file -> Multer gives uploads file
         let image = "";
-        if(req.file) {
+
+        if (req.file) {
+            console.log(req.file);
             image = req.file.path;
-        }
-        if(req.file) {
-            image = "/uploads/" + req.file.filename;
         }
 
         //Create Product
@@ -214,7 +213,7 @@ const updateProduct = async(req, res) => {
             });
         }
         //Update product
-        const updateProduct = await product.findByIdAndUpdate(
+        const updatedProduct = await Product.findByIdAndUpdate(
             req.params.id,
             req.body,
             {
@@ -231,7 +230,7 @@ const updateProduct = async(req, res) => {
     } catch(error) {
         res.status(500).json({
             success: false,
-            messge: error.message,
+            message: error.message,
         });
     }
 };
@@ -250,7 +249,7 @@ const getFeaturedProducts = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            count: product.length,
+            count: products.length,
             products,
         });
     } catch(error) {
@@ -317,7 +316,7 @@ const getRelatedProducts = async (req, res) => {
         }
 
         //Same Category products
-        const relatedProducts = await product.find({
+        const relatedProducts = await Product.find({
             category: product.category,
             _id: { $ne: product._id },   //$ne = Not Equal
         })

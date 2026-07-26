@@ -32,7 +32,7 @@ const addToCart = async (req, res) => {
         res.status(201).json({
             success: true,
             message: "Product Added To Cart",
-            cart: CartItem,
+            cart,
 
         });
     } catch (error) {
@@ -68,7 +68,10 @@ const getCartItems = async(req, res) => {
 const updateCartQuantity = async(req, res) => {
     try {
         const { quantity } = req.body;
-        const cartItem = await Cart.findById(req.params.id);
+        const cartItem = await Cart.findOne({
+        _id: req.params.id,
+         user: req.user.id,
+    });
 
         if(!cartItem) {
             return res.status(404).json({
@@ -97,7 +100,10 @@ const updateCartQuantity = async(req, res) => {
 //Delete Cart Item
 const deleteCartItem = async(req, res) => {
     try {
-        const cartItem = await Cart.findById(req.params.id);
+        const cartItem = await Cart.findOne({
+        _id: req.params.id,
+        user: req.user.id,
+    });
 
         if(!cartItem) {
             return res.status(404).json({
