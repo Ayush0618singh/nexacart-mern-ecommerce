@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+
 const auth = (req, res, next) => {
     try {
         const token = req.headers.authorization;
@@ -9,30 +10,55 @@ const auth = (req, res, next) => {
                 message: "Access Denied. No Token Provided",
             });
         }
+
         const jwtToken = token.startsWith("Bearer ")
-        ? token.split(" ")[1]
-        : token;
+            ? token.split(" ")[1]
+            : token;
 
-        console.log("Authorization Header:", req.headers.authorization);
-        console.log("JWT Secret:", process.env.JWT_SECRET);
+        const decoded = jwt.verify(
+            jwtToken,
+            process.env.JWT_SECRET
+        );
 
-        const decoded = jwt.verify(jwtToken, process.env.JWT_SECRET);
-        req.user = decoded;
-         console.log(req.user);
+        // =====================================================
+        // NORMALIZE USER ID
+        // =====================================================
+
+        const userId =
+            decoded.id ||
+            decoded._id ||
+            decoded.userId;
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: "Invalid Token. User ID not found",
+            });
+        }
+
+        // =====================================================
+        // SET AUTHENTICATED USER
+        // =====================================================
+
+        req.user = {
+            ...decoded,
+            id: userId,
+        };
+
+        console.log("AUTH USER:", req.user);
+        console.log("AUTH USER ID:", req.user.id);
+
         next();
 
-    }catch (error) {
-        console.log(error);
+    } catch (error) {
+
+        console.error("AUTH ERROR:", error.message);
 
         return res.status(401).json({
             success: false,
             message: error.message,
         });
     }
-
 };
 
 module.exports = auth;
-
-
- 

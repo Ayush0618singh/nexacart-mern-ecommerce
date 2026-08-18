@@ -1,0 +1,674 @@
+/* =========================================================
+   NEXACART SPECIFICATIONS + VARIANTS
+========================================================= */
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.product-specifications-card {
+    width: 100%;
+
+    margin-top: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #d8e4e9;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 19px
+        rgba(24, 43, 61, 0.045);
+}
+
+.specifications-header {
+    padding: 14px 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1f7f8,
+            #fafcfb
+        );
+
+    border-bottom: 1px solid #e0e8ec;
+}
+
+.specifications-header h4 {
+    margin: 0;
+
+    color: #2e4658;
+
+    font-size: 17px;
+
+    font-weight: 850;
+}
+
+.specifications-header p {
+    margin: 3px 0 0;
+
+    color: #788993;
+
+    font-size: 9px;
+}
+
+.specifications-table-wrapper {
+    max-height: 250px;
+
+    overflow: hidden;
+
+    transition:
+        max-height 0.4s ease;
+}
+
+.specifications-table-wrapper.expanded {
+    max-height: 1800px;
+}
+
+.specifications-table {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: collapse;
+}
+
+.specifications-table tr {
+    transition:
+        background 0.2s ease;
+}
+
+.specifications-table tr:hover {
+    background: #f6fafb;
+}
+
+.specifications-table th,
+.specifications-table td {
+    padding: 8px 11px;
+
+    border-bottom:
+        1px solid #edf2f5;
+
+    text-align: left;
+
+    font-size: 9px;
+
+    vertical-align: middle;
+}
+
+.specifications-table th {
+    width: 36%;
+
+    background: #f8fafb;
+
+    color: #526876;
+
+    font-weight: 800;
+}
+
+.specifications-table td {
+    color: #6b7d88;
+
+    font-weight: 600;
+}
+
+.specification-hidden {
+    display: none;
+}
+
+.specifications-toggle {
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-top:
+        1px solid #e0e8ec;
+
+    background: #fbfcfd;
+
+    color: #47838c;
+
+    font-size: 9px;
+
+    font-weight: 850;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.specifications-toggle:hover {
+    background: #f0f7f8;
+
+    color: #326f79;
+}
+
+.specifications-arrow {
+    font-size: 14px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.specifications-arrow.rotate {
+    transform:
+        rotate(180deg);
+}
+
+
+/* =========================================================
+   VARIANT SECTION
+========================================================= */
+
+.variant-section {
+    margin-top: 20px;
+}
+
+.variant-heading {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 11px;
+}
+
+.variant-heading h4 {
+    margin: 0;
+
+    color: #334b5b;
+
+    font-size: 15px;
+
+    font-weight: 850;
+}
+
+.selected-color {
+    color: #71828d;
+
+    font-size: 10px;
+
+    font-weight: 750;
+}
+
+.variant-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.variant-card {
+    width: 96px;
+
+    min-height: 105px;
+
+    padding: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background: #ffffff;
+
+    border: 1px solid #d7e2e7;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.variant-card:hover:not(:disabled) {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #8ebbc2;
+
+    box-shadow:
+        0 7px 15px
+        rgba(62, 131, 141, 0.10);
+}
+
+.variant-card.selected {
+    border:
+        2px solid #4c9098;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(76, 144, 152, 0.09);
+}
+
+.variant-card:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+.variant-image {
+    width: 68px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.variant-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.variant-color {
+    color: #304757;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+.variant-out {
+    color: #c24d59;
+
+    font-size: 8px;
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   JSX VARIANT BUTTON OVERRIDE
+========================================================= */
+
+.product-info-section
+.d-flex.flex-wrap.gap-3 > button {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease !important;
+}
+
+.product-info-section
+.d-flex.flex-wrap.gap-3 > button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.product-info-section
+.d-flex.flex-wrap.gap-3 > button:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .product-info-section
+    .d-flex.flex-wrap.gap-3 {
+        flex-wrap: nowrap !important;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+    .product-info-section
+    .d-flex.flex-wrap.gap-3 > button {
+        flex: 0 0 100px;
+    }
+
+    .variant-card {
+        flex-basis: 88px;
+
+        width: 88px;
+    }
+
+    .variant-image {
+        width: 64px;
+        height: 60px;
+    }
+}
+
+
+/* =========================================================
+   PREMIUM SPECIFICATIONS - BETTER CONTRAST
+========================================================= */
+
+.product-specifications-card {
+    border:
+        1px solid #d4e1e6 !important;
+
+    border-radius:
+        13px !important;
+
+    box-shadow:
+        0 8px 20px
+        rgba(24, 43, 61, .05) !important;
+}
+
+
+/* =========================================================
+   SPECIFICATION HEADER
+========================================================= */
+
+.specifications-header {
+    background:
+        linear-gradient(
+            135deg,
+            #eef6f7,
+            #f8fbfb
+        ) !important;
+
+    border-bottom:
+        1px solid #d7e4e8 !important;
+}
+
+.specifications-header h4 {
+    font-size:
+        18px !important;
+
+    color:
+        #294354 !important;
+}
+
+.specifications-header p {
+    font-size:
+        10px !important;
+
+    color:
+        #71838e !important;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.specifications-table th,
+.specifications-table td {
+    padding:
+        10px 12px !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+/* LEFT LABEL COLUMN */
+
+.specifications-table th {
+    width:
+        34% !important;
+
+    background:
+        #edf4f6 !important;
+
+    color:
+        #365666 !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .15px !important;
+
+    border-right:
+        1px solid #dce6ea !important;
+}
+
+
+/* RIGHT VALUE COLUMN */
+
+.specifications-table td {
+    background:
+        #ffffff !important;
+
+    color:
+        #526a78 !important;
+
+    font-size:
+        10px !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+/* Row hover */
+
+.specifications-table tr:hover th {
+    background:
+        #e7f1f3 !important;
+
+    color:
+        #2f5363 !important;
+}
+
+.specifications-table tr:hover td {
+    background:
+        #fbfdfd !important;
+}
+
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.specifications-toggle {
+    min-height:
+        42px !important;
+
+    font-size:
+        10px !important;
+
+    font-weight:
+        850 !important;
+
+    color:
+        #3f7e87 !important;
+
+    background:
+        #f8fbfc !important;
+}
+
+.specifications-toggle:hover {
+    background:
+        #edf6f7 !important;
+
+    color:
+        #2f6d76 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .specifications-table th,
+    .specifications-table td {
+        padding:
+            9px 10px !important;
+
+        font-size:
+            9px !important;
+    }
+
+    .specifications-table th {
+        font-size:
+            8.5px !important;
+    }
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS - REMOVE UNNECESSARY VERTICAL SPACE
+========================================================= */
+
+/* Main top section should stay tightly aligned */
+.product-details-row {
+    align-items: start !important;
+    gap: 22px !important;
+}
+
+
+/* =========================================================
+   GALLERY CARD - MORE COMPACT
+========================================================= */
+
+.product-main-card {
+    height: 410px !important;
+}
+
+.product-main-image-wrapper {
+    padding: 18px !important;
+}
+
+
+/* =========================================================
+   META CARD - COMPACT
+========================================================= */
+
+.product-meta-card {
+    margin-top: 9px !important;
+}
+
+.product-meta-item {
+    min-height: 62px !important;
+    padding: 10px 13px !important;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT - REDUCE INTERNAL GAPS
+========================================================= */
+
+.product-info-section {
+    padding-top: 0 !important;
+}
+
+.product-top-badge {
+    margin-bottom: 6px !important;
+}
+
+.product-title {
+    margin-bottom: 8px !important;
+}
+
+.product-rating-row {
+    padding-bottom: 9px !important;
+}
+
+.product-price-block {
+    padding: 11px 0 !important;
+}
+
+.product-description-box {
+    padding: 11px 0 !important;
+}
+
+.product-specifications-card {
+    margin-top: 10px !important;
+}
+
+.product-info-section
+> .d-flex.align-items-center.gap-3.mt-4 {
+    margin-top: 12px !important;
+    padding-top: 10px !important;
+}
+
+.product-info-section
+.mt-4.d-flex.gap-3 {
+    margin-top: 12px !important;
+}
+
+.product-trust-row {
+    margin-top: 9px !important;
+    padding: 8px 0 !important;
+}
+
+
+/* =========================================================
+   DESKTOP: STOP GALLERY SIDE FROM LOOKING TOO EMPTY
+========================================================= */
+
+@media (min-width: 992px) {
+
+    .product-main-card {
+        height: 400px !important;
+    }
+
+    .product-meta-card {
+        margin-top: 8px !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .product-main-card {
+        height: 400px !important;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .product-main-card {
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .product-main-card {
+        height: 325px !important;
+    }
+}

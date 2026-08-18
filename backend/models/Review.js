@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-//Review Schema
 const reviewSchema = new mongoose.Schema(
     {
         user: {
@@ -8,10 +7,10 @@ const reviewSchema = new mongoose.Schema(
             ref: "User",
             required: true,
         },
+
         product: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Product",
-
             required: true,
         },
 
@@ -20,16 +19,22 @@ const reviewSchema = new mongoose.Schema(
             required: true,
             min: 1,
             max: 5,
+            default: 5,
         },
+
         comment: {
             type: String,
             required: true,
+            trim: true,
+            maxlength: 500,
         },
-    },
 
+    },
     {
         timestamps: true,
     }
 );
 
-module.exports =mongoose.model("Review", reviewSchema);
+module.exports =
+    mongoose.models.Review ||
+    mongoose.model("Review", reviewSchema);

@@ -1,0 +1,2154 @@
+/* =========================================================
+   NEXACART PREMIUM USER PROFILE
+========================================================= */
+
+.premium-profile-page {
+    min-height: 100vh;
+    padding: 28px 20px 50px;
+
+    background:
+        radial-gradient(
+            circle at 15% 8%,
+            rgba(218, 230, 247, 0.65),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #f4f7fb 0%,
+            #edf2f8 100%
+        );
+
+    color: #172033;
+}
+
+.premium-profile-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   WELCOME HEADER
+========================================================= */
+
+.profile-welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+
+    margin-bottom: 18px;
+}
+
+.profile-kicker {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: #5278aa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+.profile-welcome h1 {
+    margin: 0;
+
+    color: #162238;
+
+    font-size: 31px;
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    letter-spacing: -0.9px;
+}
+
+.profile-welcome p {
+    margin: 8px 0 0;
+
+    color: #788598;
+
+    font-size: 13px;
+}
+
+.profile-completion-box {
+    width: 235px;
+
+    padding: 14px 15px;
+
+    border:
+        1px solid #dce4ee;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    box-shadow:
+        0 9px 22px
+        rgba(22,38,61,0.07);
+}
+
+.profile-completion-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #6d798b;
+
+    font-size: 9px;
+}
+
+.profile-completion-top strong {
+    color: #2f6fed;
+
+    font-size: 11px;
+}
+
+.profile-completion-track {
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #e8edf4;
+}
+
+.profile-completion-track div {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5e90e8,
+            #2f6fed
+        );
+
+    transition: width 0.3s ease;
+}
+
+
+/* =========================================================
+   ONBOARDING JOURNEY
+========================================================= */
+
+.profile-journey {
+    display: flex;
+    align-items: center;
+
+    gap: 0;
+
+    margin-bottom: 18px;
+
+    padding: 10px;
+
+    border:
+        1px solid #dce4ee;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f9fbfd
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(22,38,61,0.06);
+}
+
+/* =========================================================
+   PREMIUM ONBOARDING JOURNEY
+========================================================= */
+
+.journey-card {
+    position: relative;
+
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d8c48d;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0 0%,
+            #f3e5bb 55%,
+            #ead49b 100%
+        );
+
+    color: #4a3a1d;
+
+    text-decoration: none;
+    cursor: pointer;
+    text-align: left;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* =========================================================
+   SETUP GUIDE — KEEP BLUE
+========================================================= */
+
+.journey-card.active {
+    border-color: #2c527f;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17375e 0%,
+            #254f80 100%
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(27, 59, 96, 0.18);
+}
+
+
+/* =========================================================
+   GOLD JOURNEY ITEMS
+========================================================= */
+
+.journey-card:not(.active):hover {
+    transform: translateY(-2px);
+
+    border-color: #c7ad67;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf5 0%,
+            #f6e8c0 55%,
+            #e9cf8b 100%
+        );
+
+    box-shadow:
+        0 7px 16px
+        rgba(128, 98, 34, 0.12);
+
+    color: #463719;
+}
+
+.journey-card:not(.active) .journey-number {
+    background:
+        linear-gradient(
+            135deg,
+            #f7e6b3,
+            #dfc47f
+        );
+
+    color: #5b451d;
+
+    border:
+        1px solid #d2b674;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.journey-card strong {
+    display: block;
+
+    color: #4a391c;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+.journey-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #806e4a;
+
+    font-size: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ACTIVE TEXT — BLUE SETUP GUIDE
+========================================================= */
+
+.journey-card.active strong {
+    color: #ffffff;
+}
+
+.journey-card.active span {
+    color: #d7e3ef;
+}
+
+.journey-card.active .journey-number {
+    background:
+        linear-gradient(
+            135deg,
+            #d9bc76,
+            #f1d99a
+        );
+
+    color: #3b2c13;
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.journey-connector {
+    width: 17px;
+
+    height: 1px;
+
+    flex: 0 0 17px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d3bc7c,
+            #e6d8ad
+        );
+}
+
+/* =========================================================
+   MAIN PROFILE LAYOUT
+========================================================= */
+
+.profile-main-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(350px, 0.88fr)
+        minmax(0, 1.12fr);
+
+    gap: 17px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIGNATURE PROFILE CARD
+========================================================= */
+
+.signature-profile-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 610px;
+
+    padding: 24px;
+
+    border:
+        1px solid #223e60;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at 52% 18%,
+            rgba(75,123,182,0.24),
+            transparent 30%
+        ),
+        linear-gradient(
+            165deg,
+            #10213a 0%,
+            #193d63 48%,
+            #f3f6fa 48.2%,
+            #ffffff 100%
+        );
+
+    box-shadow:
+        0 16px 35px
+        rgba(15,38,64,0.14);
+}
+
+.signature-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.member-pill {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 11px;
+
+    border:
+        1px solid #b89550;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3ddaa,
+            #c49a4d
+        );
+
+    color: #382b15;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 12px
+        rgba(88,65,22,0.14);
+}
+
+.member-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #dbe9f6;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.member-status svg {
+    color: #5cc188;
+
+    font-size: 9px;
+}
+
+.signature-profile-card > h2 {
+    margin: 0;
+
+    max-width: 300px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.signature-photo-wrap {
+    position: relative;
+
+    width: 188px;
+    height: 188px;
+
+    margin:
+        28px auto 20px;
+}
+
+.signature-photo {
+    width: 188px;
+    height: 188px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border:
+        7px solid #e7cc8e;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dde7f4,
+            #c4d4e6
+        );
+
+    color: #47698f;
+
+    font-size: 50px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 12px 30px
+        rgba(7,25,45,0.25);
+}
+
+.signature-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform-origin: center center;
+}
+
+.signature-camera {
+    position: absolute;
+
+    right: 4px;
+    bottom: 8px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        3px solid #ffffff;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2d5e9b,
+            #173c68
+        );
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px
+        rgba(15,40,69,0.22);
+}
+
+.signature-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.gold-action-button,
+.dark-outline-button {
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding:
+        0 11px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.gold-action-button {
+    border:
+        1px solid #b58b36;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6e0a8,
+            #c79a43
+        );
+
+    color:
+        #3d2c11;
+}
+
+.gold-action-button:hover {
+    filter: brightness(1.03);
+}
+
+.dark-outline-button {
+    border:
+        1px solid #8ca0b5;
+
+    background:
+        rgba(255,255,255,0.26);
+
+    color:
+        #243e5d;
+}
+
+.dark-outline-button:hover {
+    background:
+        rgba(255,255,255,0.42);
+}
+
+.signature-help {
+    margin: 9px 0 0;
+
+    color:
+        #d8e4f0;
+
+    font-size: 7px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   IMAGE EDITOR
+========================================================= */
+
+.signature-editor {
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border:
+        1px solid #dce4ec;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.96);
+}
+
+.signature-editor-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.signature-editor-heading strong {
+    display: block;
+
+    color: #253248;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.signature-editor-heading span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8893a1;
+
+    font-size: 7px;
+}
+
+.signature-editor-heading > svg {
+    color: #4a72a4;
+
+    font-size: 16px;
+}
+
+.signature-editor-preview {
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 12px;
+}
+
+.editor-circle {
+    width: 108px;
+    height: 108px;
+
+    overflow: hidden;
+
+    border:
+        4px solid #d2b06c;
+
+    border-radius: 50%;
+
+    background: #e9eef5;
+}
+
+.editor-circle img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform-origin: center center;
+}
+
+.profile-slider-group {
+    margin-top: 10px;
+}
+
+.slider-label {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 5px;
+
+    color: #677486;
+
+    font-size: 8px;
+}
+
+.slider-label strong {
+    color: #466e9f;
+
+    font-size: 8px;
+}
+
+.slider-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.slider-row svg {
+    flex: 0 0 auto;
+
+    color: #788698;
+
+    font-size: 9px;
+}
+
+.profile-slider-group input[type="range"] {
+    width: 100%;
+
+    accent-color: #386ed3;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CURATED DETAILS
+========================================================= */
+
+.curated-details-card {
+    overflow: hidden;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fbfcfe
+        );
+
+    box-shadow:
+        0 14px 32px
+        rgba(24,42,68,0.08);
+}
+
+.curated-heading {
+    padding:
+        21px 20px 14px;
+}
+
+.curated-heading h2 {
+    margin: 0;
+
+    color:
+        #1d2839;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+}
+
+.curated-heading span {
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        #8993a1;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   CURATED ACCORDIONS
+========================================================= */
+
+.curated-section {
+    margin:
+        0 15px 8px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 11px;
+
+    background:
+        #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.curated-section.section-open {
+    border-color:
+        #c8d7e8;
+
+    box-shadow:
+        0 5px 13px
+        rgba(24,43,68,0.04);
+}
+
+/* =========================================================
+   PREMIUM GOLD ACCORDION HEADERS
+========================================================= */
+
+.curated-section-header {
+    width: 100%;
+
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 10px 13px;
+
+    border: 0;
+
+    border-bottom: 1px solid #ead9ac;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9e9 0%,
+            #f4e4b6 55%,
+            #ead194 100%
+        );
+
+    color: #392e1b;
+
+    cursor: pointer;
+    text-align: left;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+.curated-section-header:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #fffced 0%,
+            #f7e8c0 55%,
+            #edda9f 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+
+/* =========================================================
+   ACCORDION TITLE
+========================================================= */
+
+.curated-section-header strong {
+    display: block;
+
+    color: #342915;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 0.1px;
+}
+
+.curated-section-header span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #7c6a46;
+
+    font-size: 7px;
+
+    font-weight: 600;
+}
+
+.curated-section-header > svg {
+    flex: 0 0 auto;
+
+    color: #715722;
+
+    font-size: 10px;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   OPEN SECTION
+========================================================= */
+
+.curated-section.section-open {
+    border-color: #d9c184;
+
+    box-shadow:
+        0 6px 16px
+        rgba(145, 111, 42, 0.10);
+}
+
+.curated-section.section-open
+.curated-section-header {
+    background:
+        linear-gradient(
+            135deg,
+            #f9e9bd 0%,
+            #edcf84 55%,
+            #dfbe69 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.65),
+        0 3px 10px
+        rgba(154, 117, 43, 0.08);
+}
+
+.curated-section.section-open
+.curated-section-header strong {
+    color: #2e2414;
+}
+
+.curated-section.section-open
+.curated-section-header span {
+    color: #6f5b35;
+}
+
+.curated-section.section-open
+.curated-section-header > svg {
+    color: #4d3b1c;
+}
+
+
+/* =========================================================
+   CONTENT BODY
+========================================================= */
+
+.curated-section-body {
+    padding:
+        11px 13px 13px;
+
+    border-top:
+        1px solid rgba(215, 192, 132, 0.35);
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fffdf8 100%
+        );
+}
+/* =========================================================
+   PERSONAL INFORMATION
+========================================================= */
+
+.profile-mini-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+.premium-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.premium-field.field-wide {
+    grid-column:
+        1 / -1;
+}
+
+.premium-field label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color:
+        #637084;
+
+    font-size: 7px;
+
+    font-weight: 800;
+}
+
+.premium-field label svg {
+    color:
+        #5578a3;
+
+    font-size: 8px;
+}
+
+.premium-field input,
+.premium-field select,
+.premium-field textarea {
+    width: 100%;
+
+    border:
+        1px solid #dfe5ec;
+
+    border-radius: 8px;
+
+    outline: 0;
+
+    background:
+        #ffffff;
+
+    color:
+        #293446;
+
+    font-size: 8px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.premium-field input,
+.premium-field select {
+    height: 35px;
+
+    padding:
+        0 10px;
+}
+
+.premium-field textarea {
+    min-height:
+        68px;
+
+    padding:
+        9px 10px;
+
+    resize: vertical;
+
+    font-family:
+        inherit;
+
+    line-height:
+        1.4;
+}
+
+.premium-field input:focus,
+.premium-field select:focus,
+.premium-field textarea:focus {
+    border-color:
+        #85a6d9;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(47,111,237,0.08);
+}
+
+.premium-field input:disabled,
+.premium-field select:disabled,
+.premium-field textarea:disabled {
+    background:
+        #f7f9fc;
+
+    color:
+        #737e8e;
+
+    cursor:
+        not-allowed;
+}
+
+
+/* =========================================================
+   SHOPPING INTERESTS
+========================================================= */
+
+.interest-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+.interest-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border:
+        1px solid #e0e6ed;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fbfcfe,
+            #f7f9fc
+        );
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.interest-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #cbd9e8;
+
+    box-shadow:
+        0 6px 13px
+        rgba(29,50,79,0.06);
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.interest-card > svg {
+    width: 27px;
+    height: 27px;
+
+    flex: 0 0 27px;
+
+    padding: 7px;
+
+    border-radius: 8px;
+
+    background:
+        #e9f0fa;
+
+    color:
+        #476d9e;
+
+    box-sizing: border-box;
+}
+
+.interest-card strong {
+    display: block;
+
+    color:
+        #2d3748;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.interest-card span {
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        #8a94a2;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   SAVED ADDRESS
+========================================================= */
+
+.saved-address-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    padding: 11px;
+
+    border:
+        1px solid #e1e7ee;
+
+    border-radius: 9px;
+
+    background:
+        #fafbfd;
+}
+
+.saved-address-icon {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        #e8eef8;
+
+    color:
+        #4a709e;
+
+    font-size: 10px;
+}
+
+.saved-address-card strong {
+    display: block;
+
+    color:
+        #2c3647;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.saved-address-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        #7e8999;
+
+    font-size: 7px;
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.security-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+.security-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border:
+        1px solid #e1e7ef;
+
+    border-radius: 9px;
+
+    background:
+        #fafbfd;
+}
+
+.security-card > svg {
+    width: 27px;
+    height: 27px;
+
+    flex: 0 0 27px;
+
+    padding: 7px;
+
+    border-radius: 8px;
+
+    background:
+        #e7effd;
+
+    color:
+        #416fa8;
+
+    box-sizing: border-box;
+
+    font-size: 9px;
+}
+
+.security-card strong {
+    display: block;
+
+    color:
+        #2c3748;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.security-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        #84909f;
+
+    font-size: 7px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   BOTTOM ACTION BAR
+========================================================= */
+
+.profile-action-bar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border:
+        1px solid #dce4ed;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    box-shadow:
+        0 8px 22px
+        rgba(23,40,62,0.06);
+}
+
+.profile-action-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.profile-home-link,
+.profile-action-small {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 10px;
+
+    border:
+        1px solid #e0e6ed;
+
+    border-radius: 8px;
+
+    background:
+        #ffffff;
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+}
+
+.profile-home-link:hover,
+.profile-action-small:hover {
+    color: inherit;
+
+    text-decoration:
+        none;
+
+    background:
+        #f7f9fc;
+}
+
+.profile-home-link > svg,
+.profile-action-small > svg {
+    color:
+        #5073a0;
+
+    font-size:
+        9px;
+}
+
+.profile-home-link strong {
+    display: block;
+
+    color:
+        #2a3445;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+}
+
+.profile-home-link span {
+    display: block;
+
+    margin-top:
+        2px;
+
+    color:
+        #8791a0;
+
+    font-size:
+        6px;
+}
+
+.profile-action-small {
+    color:
+        #4d6b8b;
+
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+}
+
+.profile-save-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.profile-update-button {
+    min-height:
+        39px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap: 7px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid #b08b43;
+
+    border-radius:
+        9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #214d7e,
+            #17365b
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 7px 15px
+        rgba(23,51,84,0.16);
+}
+
+.profile-update-button:hover {
+    transform:
+        translateY(-1px);
+}
+
+.profile-edit-actions {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+}
+
+.profile-cancel-button,
+.profile-save-button {
+    min-height:
+        35px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        6px;
+
+    padding:
+        0 12px;
+
+    border-radius:
+        8px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+}
+
+.profile-cancel-button {
+    border:
+        1px solid #d8e0e8;
+
+    background:
+        #ffffff;
+
+    color:
+        #677283;
+}
+
+.profile-save-button {
+    border:
+        0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3c78e6,
+            #245bc6
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 5px 12px
+        rgba(47,111,237,0.18);
+}
+
+
+/* =========================================================
+   FOOTER STATUS
+========================================================= */
+
+.profile-footer-status {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        15px;
+
+    margin-top:
+        8px;
+
+    color:
+        #7a8796;
+
+    font-size:
+        7px;
+}
+
+.profile-footer-status span {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+}
+
+.profile-footer-status svg {
+    color:
+        #4aae70;
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 980px) {
+
+    .profile-main-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+    .signature-profile-card {
+        order:
+            1;
+    }
+
+    .curated-details-card {
+        order:
+            2;
+    }
+
+    .profile-action-bar {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .profile-action-links {
+        flex-wrap:
+            wrap;
+    }
+
+    .profile-save-area {
+        justify-content:
+            flex-end;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .premium-profile-page {
+        padding:
+            20px 12px 35px;
+    }
+
+    .profile-welcome {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+    .profile-completion-box {
+        width:
+            100%;
+
+        box-sizing:
+            border-box;
+    }
+
+    .profile-welcome h1 {
+        font-size:
+            26px;
+    }
+
+    .profile-journey {
+        overflow-x:
+            auto;
+    }
+
+    .journey-card {
+        min-width:
+            170px;
+    }
+
+    .journey-connector {
+        min-width:
+            12px;
+    }
+
+    .signature-profile-card {
+        min-height:
+            auto;
+
+        padding:
+            20px;
+    }
+
+    .signature-actions {
+        grid-template-columns:
+            1fr;
+    }
+
+    .profile-mini-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .premium-field.field-wide {
+        grid-column:
+            auto;
+    }
+
+    .interest-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .security-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .profile-action-links {
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        width:
+            100%;
+    }
+
+    .profile-home-link,
+    .profile-action-small {
+        width:
+            100%;
+
+        box-sizing:
+            border-box;
+    }
+
+    .profile-save-area {
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+    .profile-update-button {
+        width:
+            100%;
+    }
+
+    .profile-edit-actions {
+        width:
+            100%;
+    }
+
+    .profile-cancel-button,
+    .profile-save-button {
+        flex:
+            1;
+    }
+
+    .profile-footer-status {
+        flex-wrap:
+            wrap;
+
+        justify-content:
+            center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .premium-profile-page {
+        padding-left:
+            9px;
+
+        padding-right:
+            9px;
+    }
+
+    .profile-welcome h1 {
+        font-size:
+            23px;
+    }
+
+    .signature-photo-wrap,
+    .signature-photo {
+        width:
+            165px;
+
+        height:
+            165px;
+    }
+
+    .signature-photo-wrap {
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+    }
+
+    .curated-heading {
+        padding-left:
+            15px;
+
+        padding-right:
+            15px;
+    }
+
+    .curated-section {
+        margin-left:
+            10px;
+
+        margin-right:
+            10px;
+    }
+
+    .profile-action-links {
+        grid-template-columns:
+            1fr;
+    }
+
+    .profile-edit-actions {
+        flex-direction:
+            column;
+    }
+
+    .profile-cancel-button,
+    .profile-save-button {
+        width:
+            100%;
+    }
+}
+
+
+/* =========================================================
+   PREMIUM HELP & SUPPORT CARD
+========================================================= */
+
+.profile-help-card {
+    min-width: 250px;
+    min-height: 64px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 10px 13px;
+
+    border: 1px solid #dce5ee;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7fafc 100%
+        );
+
+    text-decoration: none;
+
+    box-shadow:
+        0 6px 16px
+        rgba(24, 45, 66, 0.045);
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
+}
+
+
+/* ICON */
+
+.profile-help-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf5f8,
+            #e1eef3
+        );
+
+    color: #3f7893;
+
+    font-size: 16px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(63, 120, 147, 0.06);
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease;
+}
+
+
+/* CONTENT */
+
+.profile-help-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.profile-help-content strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #263548;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+.profile-help-content span {
+    display: block;
+
+    overflow: hidden;
+
+    color: #7b8997;
+
+    font-size: 8px;
+
+    line-height: 1.35;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ARROW */
+
+.profile-help-arrow {
+    width: 26px;
+    height: 26px;
+
+    flex: 0 0 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #f1f5f8;
+
+    color: #628096;
+
+    font-size: 12px;
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        color 0.22s ease;
+}
+
+
+/* HOVER */
+
+.profile-help-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #bcd2e0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f2f8fa 100%
+        );
+
+    box-shadow:
+        0 11px 24px
+        rgba(24, 45, 66, 0.08);
+}
+
+.profile-help-card:hover
+.profile-help-icon {
+    transform: scale(1.05);
+
+    background:
+        linear-gradient(
+            135deg,
+            #e4f2f5,
+            #d6ebef
+        );
+}
+
+.profile-help-card:hover
+.profile-help-arrow {
+    transform: translateX(2px);
+
+    background: #2f7786;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .profile-help-card {
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .profile-help-card {
+        width: 100%;
+
+        min-width: 0;
+    }
+}

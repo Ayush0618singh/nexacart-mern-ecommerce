@@ -1,30 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+
 function Newsletter() {
+
+    const [email, setEmail] = useState("");
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        if (!email.trim()) {
+            return;
+        }
+
+        setEmail("");
+    };
+
     return (
-        <section className="container my-5">
-            <h2>
+        <section className="newsletter-section">
 
-                Subscribe Newsletter
+            <div className="newsletter-box">
 
-            </h2>
+                <div className="newsletter-icon">
+                    ✉
+                </div>
 
-            <div className="row">
-                <div className="col-md-6">
+                <div className="newsletter-content">
+
+                    <span className="newsletter-label">
+                        STAY UPDATED
+                    </span>
+
+                    <h2>
+                        Subscribe To Our Newsletter
+                    </h2>
+
+                    <p>
+                        Get the latest products, offers and updates
+                        directly in your inbox.
+                    </p>
+
+                </div>
+
+                <form
+                    className="newsletter-form"
+                    onSubmit={handleSubmit}
+                >
+
                     <input
                         type="email"
-                        className="form-control"
-                        placeholder="Enter Email"
+                        placeholder="Enter your email address"
+                        value={email}
+                        onChange={(e) =>
+                            setEmail(e.target.value)
+                        }
+                        required
                     />
-                </div>
 
-                <div className="col-md-2">
-                    <button className="btn btn-dark w-100">
-
+                    <button type="submit">
                         Subscribe
-
+                        <span>→</span>
                     </button>
-                </div>
+
+                </form>
+
             </div>
+
         </section>
     );
 }

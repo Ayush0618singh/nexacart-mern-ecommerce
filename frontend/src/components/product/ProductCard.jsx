@@ -2,100 +2,145 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { addToCart } from "../../services/cartService";
-import { addToWishlist } from "../../services/wishlistService";
 import { toast } from "react-toastify";
+
+import "../../styles/product-card.css";
 
 function ProductCard({ product }) {
 
     const handleAddToCart = async () => {
+
         try {
+
             await addToCart({
                 product: product._id,
                 quantity: 1,
             });
-            toast.success("Product Added To Wishlist");
+
+            toast.success("Product Added To Cart");
 
         } catch (error) {
+
             console.log(error);
+
             toast.error(
-                error.response?.data?.message || "Please Login First"
-            ); 
+                error.response?.data?.message ||
+                "Please Login First"
+            );
         }
     };
 
     return (
+        <div className="product-card">
 
-        <div className="card h-100 shadow-sm border-0">
+            {/* PRODUCT IMAGE */}
 
-            {/* Product Image */}
-            <img
-                src={
-                 product.image
-                    ? "/src/assets/images/"+ product.image
-                    : "https://via.placeholder.com/300x250?text=No+Image"
-                }
-                className="card-img-top"
-                alt={product.name}
-                style={{
-                    height: "250px",
-                    objectFit: "cover"
-                }}
-            />
+            <Link
+                to={`/product/${product._id}`}
+                className="product-card-image-link"
+            >
 
-            <div className="card-body d-flex flex-column">
+                <div className="product-card-image">
 
-                {/* Category */}
-                <span className="badge bg-primary mb-2 align-self-start">
-                    {product.category?.name}
+                    {/* {product.stock > 0 && (
+                        <span className="product-available-badge">
+                            In Stock
+                        </span>
+                    )} */}
+
+                    <img
+                        src={
+                            product.images?.[0] ||
+                            product.image ||
+                            "https://via.placeholder.com/300x250?text=No+Image"
+                        }
+                        alt={product.name}
+                    />
+
+                </div>
+
+            </Link>
+
+
+            {/* PRODUCT CONTENT */}
+
+            <div className="product-card-body">
+
+                <span className="product-category">
+                    {product.category?.name || "Product"}
                 </span>
 
-                {/* Product Name */}
-                <h5 className="card-title">
-                    {product.name}
-                </h5>
 
-                {/* Description */}
-                <p className="card-text text-muted">
-                    {product.description?.length > 70
-                        ? product.description.substring(0, 70) + "..."
+                <Link
+                    to={`/product/${product._id}`}
+                    className="product-name-link"
+                >
+
+                    <h5 className="product-card-title">
+                        {product.name}
+                    </h5>
+
+                </Link>
+
+
+                <p className="product-card-description">
+
+                    {product.description?.length > 65
+                        ? product.description.substring(0, 65) + "..."
                         : product.description}
+
                 </p>
 
-                {/* Price */}
-                <h4 className="text-success fw-bold">
-                    ₹ {product.price}
-                </h4>
 
-                {/* Stock */}
-                <p className="mb-3">
-                    {
-                        product.stock > 0
-                            ? (
-                                <span className="text-success">
-                                    In Stock
-                                </span>
-                            )
-                            : (
-                                <span className="text-danger">
-                                    Out Of Stock
-                                </span>
-                            )
-                    }
-                </p>
+                <div className="product-card-price-row">
 
-                {/* Buttons */}
-                <div className="mt-auto d-grid gap-2">
+                    <h4 className="product-card-price">
+                        ₹ {product.price}
+                    </h4>
+
+                    {product.discount > 0 && (
+                        <span className="product-discount">
+                            {product.discount}% OFF
+                        </span>
+                    )}
+
+                </div>
+
+
+                <div className="product-card-bottom">
+
+                    <p className="product-stock">
+
+                        {product.stock > 0 ? (
+                            <span className="in-stock">
+                                ● In Stock
+                            </span>
+                        ) : (
+                            <span className="out-stock">
+                                ● Out Of Stock
+                            </span>
+                        )}
+
+                    </p>
+
+                </div>
+
+
+                {/* BUTTONS */}
+
+                <div className="product-card-buttons">
 
                     <Link
                         to={`/product/${product._id}`}
-                        className="btn btn-dark"
+                        className="product-details-btn"
                     >
                         View Details
                     </Link>
 
                     <button
-                        className="btn btn-primary"
+                        className="product-cart-btn"
                         onClick={handleAddToCart}
+                        disabled={product.stock <= 0}
                     >
                         Add To Cart
                     </button>
@@ -105,9 +150,7 @@ function ProductCard({ product }) {
             </div>
 
         </div>
-
     );
-
 }
 
 export default ProductCard;

@@ -1,1 +1,125 @@
- 
+/* =========================================================
+   NEXACART GLOBAL CSS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #020b18;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 35%,
+            rgba(59, 130, 246, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #06172d 0%,
+            #031124 48%,
+            #020b18 100%
+        );
+
+    font-family:
+        'Plus Jakarta Sans',
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+    background: transparent;
+}
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* =========================================================
+   BUTTON RESET
+   ========================================================= */
+
+button {
+    cursor: pointer;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+}
+
+/* =========================================================
+   DASHBOARD CARD
+   ========================================================= */
+
+.dashboard-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(59, 130, 246, 0.35);
+    color: #ffffff;
+}

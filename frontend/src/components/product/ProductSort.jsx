@@ -14,28 +14,24 @@ function ProductSort({ sort, setSort }) {
 
             </option>
 
-            <option value="price">
-
+            <option value="priceLow">
                 Price Low To High
-
             </option>
 
-            <option value="-price">
-
+            <option value="priceHigh">
                 Price High To Low
-
             </option>
 
-            <option value="name">
-
+            <option value="nameAZ">
                 Name A-Z
-
             </option>
 
-            <option value="-createdAt">
+            <option value="oldest">
+                Oldest
+            </option>
 
+            <option value="">
                 Newest
-
             </option>
 
         </select>

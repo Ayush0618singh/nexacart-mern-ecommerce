@@ -22,12 +22,13 @@ const addReview = async (req, res) => {
             comment,
         });
 
+        await updateProductRating(product);
+
         res.status(201).json({
             success: true,
             message: "Review Added Successfully",
             review,
         });
-        await updateProductRating(product);
 
     } catch(error) {
         res.status(500).json({
@@ -140,7 +141,8 @@ const updateProductRating = async (productId) => {
 
             0
         );
-        averageRating = totalRating / reviews.length;
+        averageRating =
+        Number((totalRating / reviews.length).toFixed(1));
     }
 
     //Update Product
@@ -154,9 +156,36 @@ const updateProductRating = async (productId) => {
 
 };
 
+// Get All Reviews (Admin)
+
+const getAllReviews = async (req, res) => {
+    try {
+
+        const reviews = await Review.find()
+            .populate("user", "name email")
+            .populate("product", "name")
+            .sort("-createdAt");
+
+        res.status(200).json({
+            success: true,
+            count: reviews.length,
+            reviews,
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        });
+
+    }
+};
+
 module.exports = {
     addReview,
     getProductReviews,
     updateReview,
     deleteReview,
+    getAllReviews,
 };

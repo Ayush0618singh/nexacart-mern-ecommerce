@@ -1,12 +1,15 @@
 const Razorpay = require("razorpay");
 
-//Razorpay Configuration
+// console.log("Razorpay Key ID Loaded:", process.env.RAZORPAY_KEY_ID);
+// console.log(
+//     "Razorpay Secret Loaded:",
+//     process.env.RAZORPAY_KEY_SECRET
+//         ? "YES"
+//         : "NO"
+// );
+
 const razorpay = new Razorpay({
-
-    //API key Id
     key_id: process.env.RAZORPAY_KEY_ID,
-
-    //API Secret Key
     key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 

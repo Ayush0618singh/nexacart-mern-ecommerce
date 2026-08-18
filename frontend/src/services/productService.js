@@ -33,3 +33,11 @@ export const getAllProducts = (params) => {
 
     });
 };
+
+// Get Product Reviews
+export const getProductReviews = (productId) =>
+    axiosInstance.get(`/reviews/product/${productId}`);
+
+// Add Review
+export const addReview = (data) =>
+    axiosInstance.post("/reviews", data);

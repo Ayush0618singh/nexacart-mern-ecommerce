@@ -17,6 +17,7 @@ const {
     getLatestProducts,
     getTopRatedProducts,
     getRelatedProducts,
+    toggleFeatured,
 
 } = require("../controllers/productController");
 
@@ -33,11 +34,29 @@ router.post(
     "/",
     auth,
     admin,
-    upload.single("image"),
+    upload.any(),
     addProduct
 );
 
-router.put("/:id", auth, admin, updateProduct);
-router.delete("/:id", auth, admin, deleteProduct);
+router.put(
+    "/:id",
+    auth,
+    admin,
+    upload.array("images", 5),
+    updateProduct
+);
+
+router.put(
+    "/:id/featured",
+    auth,
+    admin,
+    toggleFeatured
+);
+router.delete(
+    "/:id",
+    auth, 
+    admin, 
+    deleteProduct
+);
 
 module.exports = router;

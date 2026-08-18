@@ -36,18 +36,58 @@ const addToWishlist = async (req, res) => {
 };
 
 //Get Logged In User Wishlist
+// const getWishlist = async (req, res) => {
+//     try {
+//         if (!req.user?.id) {
+//             return res.status(401).json({
+//                 success: false,
+//                 message: "User authentication failed",
+//             });
+//         }
+//         const wishlist = await Wishlist.find({
+//             user: req.user.id,
+//         }).populate("product");
+
+//         res.status(200).json({
+//             success: true,
+//             count: wishlist.length,
+//             wishlist,
+//         });
+//     } catch(error) {
+//         res.status(500).json({
+//             success: false,
+//             message: error.message,
+//         });
+//     }
+// };
+
+//Get Logged In User Wishlist
 const getWishlist = async (req, res) => {
     try {
+
+        console.log("========== NAVBAR WISHLIST CHECK ==========");
+        console.log("Logged User ID:", req.user.id);
+
         const wishlist = await Wishlist.find({
             user: req.user.id,
         }).populate("product");
+
+        console.log("Wishlist Items For This User:", wishlist.length);
+        console.log(
+            "Wishlist Item IDs:",
+            wishlist.map((item) => item._id.toString())
+        );
 
         res.status(200).json({
             success: true,
             count: wishlist.length,
             wishlist,
         });
-    } catch(error) {
+
+    } catch (error) {
+
+        console.error("Get Wishlist Error:", error);
+
         res.status(500).json({
             success: false,
             message: error.message,

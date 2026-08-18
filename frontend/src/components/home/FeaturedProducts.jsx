@@ -1,18 +1,43 @@
 import React from "react";
-
-import ProductGrid from "../product/productGrid";
+import { Link } from "react-router-dom";
+import ProductGrid from "../product/ProductGrid";
 
 function FeaturedProducts({ products }) {
+
     return (
-        <section className="container my-5">
-            <h2>
+        <section className="products-section">
 
-                Featured Products
+            <div className="products-section-header">
 
-            </h2>
+                <div>
 
-            <ProductGrid products={products}/>
-            
+                    <span className="section-eyebrow">
+                        FEATURED
+                    </span>
+
+                    <h2>
+                        Featured Products
+                    </h2>
+
+                    <p>
+                        Explore our most popular products
+                        selected specially for you.
+                    </p>
+
+                </div>
+
+                <Link
+                    to="/products"
+                    className="products-view-all"
+                >
+                    View All
+                    <span>→</span>
+                </Link>
+
+            </div>
+
+            <ProductGrid products={products} />
+
         </section>
     );
 }

@@ -22,21 +22,18 @@ import "./index.css";
 import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <AuthProvider>
-      <CartProvider>
-        <WishlistProvider>
+  <AuthProvider>
+    <CartProvider>
+      <WishlistProvider>
 
-          <App />
+        <App />
 
-          <ToastContainer
-            postion="top-right"
-            autoClose={3000}
-          />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+        />
 
-        </WishlistProvider>
-      </CartProvider>
-    </AuthProvider>
-     
-  </React.StrictMode>
+      </WishlistProvider>
+    </CartProvider>
+  </AuthProvider>
 );

@@ -2,16 +2,26 @@ const mongoose = require("mongoose");
 
 const categorySchema = new mongoose.Schema(
     {
+        // Category / Subcategory name
         name: {
             type: String,
             required: true,
-            unique: true,
             trim: true,
         },
 
+        // Category description
         description: {
             type: String,
             default: "",
+        },
+
+        // Parent category
+        // Main category ke liye null rahega
+        // Subcategory ke liye parent category ki _id rahegi
+        parent: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Category",
+            default: null,
         },
     },
     {
@@ -19,5 +29,6 @@ const categorySchema = new mongoose.Schema(
     }
 );
 
-module.exports = 
-    mongoose.Category || mongoose.model("Category", categorySchema);
+module.exports =
+    mongoose.models.Category ||
+    mongoose.model("Category", categorySchema);

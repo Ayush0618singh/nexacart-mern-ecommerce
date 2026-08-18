@@ -1,0 +1,2281 @@
+/* =========================================================
+   MODERN PREMIUM NAVBAR
+========================================================= */
+
+.main-navbar {
+    width: 100%;
+    height: 58px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #e8edf3;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
+
+.navbar-container {
+    width: min(1024px, calc(100% - 30px));
+
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    color: #101828;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-logo:hover {
+    color: #2563eb;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGO ICON
+========================================================= */
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 42px;
+
+    background: transparent;
+}
+
+.logo-icon img {
+    width: 39px;
+    height: 39px;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: transparent;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.navbar-search {
+    flex: 1;
+
+    max-width: 415px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #dfe5ec;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.navbar-search:focus-within {
+    background: #ffffff;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.search-icon {
+    width: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+
+.navbar-search input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0 8px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #0f172a;
+
+    font-size: 14px;
+}
+
+.navbar-search input::placeholder {
+    color: #98a2b3;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.navbar-search button {
+    height: 36px;
+
+    margin-right: 5px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.navbar-search button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   NAVBAR ACTIONS
+========================================================= */
+
+.navbar-actions {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HOME / PRODUCTS
+========================================================= */
+
+.navbar-link {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    height: 42px;
+
+    padding: 0 11px;
+
+    color: #1f2937;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.navbar-link:hover {
+    color: #2563eb;
+
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   ICON BUTTONS
+========================================================= */
+
+.navbar-icon-link {
+    position: relative;
+
+    width: 43px;
+    height: 43px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #1f2937;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-icon-link:hover {
+    background: #f1f5f9;
+
+    color: #2563eb;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   WISHLIST
+========================================================= */
+
+.wishlist-link:hover {
+    color: #e11d48;
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-link:hover {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.navbar-badge {
+    position: absolute;
+
+    top: -1px;
+    right: -1px;
+
+    min-width: 19px;
+    height: 19px;
+
+    padding: 0 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   PROFILE WRAPPER
+========================================================= */
+
+.profile-wrapper {
+    position: relative;
+
+    margin-left: 4px;
+}
+
+
+/* =========================================================
+   PROFILE BUTTON
+========================================================= */
+
+.navbar-profile {
+    height: 46px;
+
+    padding: 4px 8px 4px 5px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    border: 1px solid transparent;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.navbar-profile:hover,
+.navbar-profile.profile-active {
+    background: #eff6ff;
+
+    border-color: #dbeafe;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.profile-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f7fbb,
+            #2e5d96
+        );
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    border:
+        2px solid #dfe9f7;
+
+    box-shadow:
+        0 3px 9px
+        rgba(34,62,95,0.14);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   PROFILE ARROW
+========================================================= */
+
+.profile-arrow {
+    color: #64748b;
+
+    font-size: 10px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.profile-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+========================================================= */
+
+.profile-dropdown {
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    right: 0;
+
+    width: 230px;
+
+    padding: 6px 0;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe5ec;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.12),
+        0 4px 10px rgba(15, 23, 42, 0.05);
+
+    overflow: hidden;
+
+    animation: dropdownOpen 0.18s ease;
+}
+
+
+/* =========================================================
+   DROPDOWN ANIMATION
+========================================================= */
+
+@keyframes dropdownOpen {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM
+========================================================= */
+
+.profile-dropdown-item {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 0 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #1f2937;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.profile-dropdown-item svg {
+    width: 15px;
+
+    color: #64748b;
+
+    flex-shrink: 0;
+}
+
+.profile-dropdown-item:hover {
+    background: #f8fafc;
+
+    color: #2563eb;
+}
+
+.profile-dropdown-item:hover svg {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   ADMIN DROPDOWN
+========================================================= */
+
+.admin-dropdown-item {
+    color: #6d28d9;
+
+    background: #faf5ff;
+}
+
+.admin-dropdown-item svg {
+    color: #7c3aed;
+}
+
+.admin-dropdown-item:hover {
+    background: #f5f3ff;
+
+    color: #6d28d9;
+}
+
+.admin-dropdown-item:hover svg {
+    color: #7c3aed;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.dropdown-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 5px 0;
+
+    background: #e5e7eb;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-dropdown-item {
+    color: #dc2626;
+}
+
+.logout-dropdown-item svg {
+    color: #dc2626;
+}
+
+.logout-dropdown-item:hover {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+.logout-dropdown-item:hover svg {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.navbar-register {
+    height: 40px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.navbar-register:hover {
+    background: #1d4ed8;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .navbar-container {
+        width: calc(100% - 30px);
+
+        gap: 18px;
+    }
+
+    .navbar-search {
+        max-width: 420px;
+    }
+
+    .navbar-link {
+        padding: 0 8px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1000
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar-container {
+        gap: 12px;
+    }
+
+    .navbar-search {
+        max-width: 350px;
+    }
+
+    .navbar-logo {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .logo-icon img {
+        width: 37px;
+        height: 37px;
+    }
+
+    .navbar-link {
+        font-size: 13px;
+
+        padding: 0 6px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 850
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .main-navbar {
+        height: auto;
+
+        padding: 10px 0;
+    }
+
+    .navbar-container {
+        width: calc(100% - 22px);
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .navbar-logo {
+        flex: 1;
+    }
+
+    .navbar-actions {
+        margin-left: 0;
+    }
+
+    .navbar-search {
+        order: 3;
+
+        flex-basis: 100%;
+
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar-container {
+        width: calc(100% - 16px);
+    }
+
+    .navbar-logo {
+        font-size: 18px;
+    }
+    
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .logo-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navbar-link {
+        display: none;
+    }
+
+    .navbar-icon-link {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navbar-profile {
+        height: 40px;
+
+        padding-right: 5px;
+    }
+
+    .profile-avatar {
+        width: 33px;
+        height: 33px;
+    }
+
+    .profile-arrow {
+        display: none;
+    }
+
+    .navbar-search {
+        height: 43px;
+    }
+
+    .navbar-search button {
+        padding: 0 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .logo-text {
+        display: none;
+    }
+
+    .navbar-actions {
+        gap: 2px;
+    }
+
+    .navbar-search input {
+        font-size: 12px;
+    }
+
+    .profile-dropdown {
+        right: -4px;
+
+        width: 215px;
+    }
+
+}
+
+/* =========================================================
+   NAVBAR COUNT BADGES
+========================================================= */
+
+/* .navbar-badge-link {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #1e293b;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+} */
+
+/* =========================================================
+   NAVBAR BADGE
+========================================================= */
+
+.navbar-badge-link {
+    position: relative;
+}
+
+.nav-count-badge {
+    position: absolute;
+
+    top: 1px;
+    right: 1px;
+
+    min-width: 16px;
+    height: 16px;
+
+    padding: 0 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dc2626;
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    border: 2px solid #ffffff;
+}
+
+.navbar-badge-link:hover {
+    background: #f1f5f9;
+
+    color: #2563eb;
+
+    transform: translateY(-1px);
+}
+
+
+/* ICON */
+
+.nav-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+
+/* COUNT */
+
+.nav-count-badge {
+    position: absolute;
+
+    top: -2px;
+    right: -2px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ffffff;
+
+    border-radius: 50px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    box-shadow:
+        0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+
+/* WISHLIST BADGE */
+
+.navbar-badge-link[href="/wishlist"] .nav-count-badge {
+    background: #e11d48;
+
+    box-shadow:
+        0 2px 6px rgba(225, 29, 72, 0.22);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .navbar-badge-link {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-icon {
+        font-size: 22px;
+    }
+
+    .nav-count-badge {
+        min-width: 16px;
+        height: 16px;
+
+        padding: 0 4px;
+
+        font-size: 8px;
+
+        top: -1px;
+        right: -1px;
+    }
+}
+
+/* =========================================================
+   SEARCH WRAPPER
+========================================================= */
+
+.navbar-search-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 620px;
+}
+
+
+/* =========================================================
+   SEARCH SUGGESTIONS
+========================================================= */
+
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.14);
+
+    overflow: hidden;
+
+    z-index: 2000;
+
+    max-height: 420px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   SUGGESTION ITEM
+========================================================= */
+
+.search-suggestion-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border: none;
+
+    background: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.search-suggestion-item:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   SUGGESTION IMAGE
+========================================================= */
+
+.search-suggestion-image {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+}
+
+.search-suggestion-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.search-suggestion-content {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.search-suggestion-name {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.search-suggestion-brand {
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.search-suggestion-price {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #198754;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY
+========================================================= */
+
+.search-suggestion-loading,
+.search-suggestion-empty {
+    padding: 18px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   NEXACART NAVBAR - FINAL UX POLISH
+========================================================= */
+
+.main-navbar {
+    height: 64px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border-bottom:
+        1px solid #e5eaf0;
+
+    box-shadow:
+        0 6px 24px rgba(15, 23, 42, 0.055);
+}
+
+.navbar-container {
+    width:
+        min(
+            1240px,
+            calc(100% - 32px)
+        );
+
+    gap:
+        22px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+    gap:
+        9px;
+
+    font-size:
+        20px;
+
+    color:
+        #1b2b3c;
+}
+
+.navbar-logo:hover {
+    color:
+        #2f718a;
+}
+
+.logo-icon {
+    width:
+        34px;
+
+    height:
+        34px;
+
+    flex-basis:
+        34px;
+}
+
+.logo-icon img {
+    width:
+        31px;
+
+    height:
+        31px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.navbar-search-wrapper {
+    flex:
+        1 1 430px;
+
+    max-width:
+        560px;
+}
+
+.navbar-search {
+    width:
+        100%;
+
+    height:
+        44px;
+
+    border:
+        1px solid #dbe3ea;
+
+    border-radius:
+        12px;
+
+    background:
+        #f8fafc;
+
+    box-shadow:
+        0 2px 8px
+        rgba(30, 50, 70, 0.025);
+}
+
+.navbar-search:focus-within {
+    border-color:
+        #6e9eb2;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(78, 128, 151, 0.09);
+
+    background:
+        #ffffff;
+}
+
+.search-icon {
+    width:
+        42px;
+
+    color:
+        #738a9b;
+
+    font-size:
+        14px;
+}
+
+.navbar-search input {
+    font-size:
+        13px;
+
+    color:
+        #27384a;
+}
+
+.navbar-search input::placeholder {
+    color:
+        #93a0ad;
+}
+
+.navbar-search button {
+    height:
+        36px;
+
+    margin-right:
+        4px;
+
+    padding:
+        0 17px;
+
+    border-radius:
+        9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2f7788,
+            #458f96
+        );
+
+    font-size:
+        11px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(47, 119, 136, 0.12);
+}
+
+.navbar-search button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #3c8795,
+            #51a09f
+        );
+}
+
+
+/* =========================================================
+   MAIN NAV
+========================================================= */
+
+.navbar-actions {
+    gap:
+        5px;
+}
+
+.navbar-link {
+    height:
+        40px;
+
+    padding:
+        0 11px;
+
+    color:
+        #405164;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    border-radius:
+        9px;
+}
+
+.navbar-link:hover {
+    color:
+        #2f718a;
+
+    background:
+        #f2f7f9;
+}
+
+
+/* =========================================================
+   ICON BUTTONS
+========================================================= */
+
+.navbar-icon-link {
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border-radius:
+        10px;
+
+    color:
+        #405164;
+}
+
+.navbar-icon-link:hover {
+    color:
+        #2f718a;
+
+    background:
+        #f1f6f8;
+}
+
+.nav-icon {
+    font-size:
+        21px;
+}
+
+
+/* =========================================================
+   COUNT BADGES
+========================================================= */
+
+.nav-count-badge {
+    top:
+        -2px;
+
+    right:
+        -2px;
+
+    min-width:
+        17px;
+
+    height:
+        17px;
+
+    padding:
+        0 4px;
+
+    font-size:
+        8px;
+
+    border:
+        2px solid #ffffff;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-wrapper {
+    margin-left:
+        3px;
+}
+
+.navbar-profile {
+    height:
+        42px;
+
+    padding:
+        3px 7px 3px 4px;
+
+    gap:
+        7px;
+
+    border-radius:
+        11px;
+}
+
+.navbar-profile:hover,
+.navbar-profile.profile-active {
+    background:
+        #f0f6f8;
+
+    border-color:
+        #d5e5eb;
+}
+
+.profile-avatar {
+    width:
+        34px;
+
+    height:
+        34px;
+
+    font-size:
+        11px;
+
+    border:
+        2px solid #e1ebef;
+
+    background:
+        linear-gradient(
+            135deg,
+            #527e96,
+            #2f596f
+        );
+
+    box-shadow:
+        0 3px 9px
+        rgba(34, 62, 95, 0.12);
+}
+
+.profile-arrow {
+    color:
+        #6b7e8d;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+========================================================= */
+
+.profile-dropdown {
+    top:
+        calc(100% + 9px);
+
+    width:
+        245px;
+
+    padding:
+        7px;
+
+    border:
+        1px solid #dce5eb;
+
+    border-radius:
+        13px;
+
+    box-shadow:
+        0 18px 42px
+        rgba(20, 41, 60, 0.13),
+        0 5px 12px
+        rgba(20, 41, 60, 0.05);
+
+    background:
+        rgba(255,255,255,0.98);
+}
+
+.profile-dropdown-item {
+    min-height:
+        43px;
+
+    padding:
+        0 12px;
+
+    gap:
+        10px;
+
+    border-radius:
+        9px;
+
+    color:
+        #3e5061;
+
+    font-size:
+        12px;
+
+    font-weight:
+        650;
+}
+
+.profile-dropdown-item svg {
+    width:
+        14px;
+
+    color:
+        #708595;
+}
+
+.profile-dropdown-item:hover {
+    background:
+        #f2f7f9;
+
+    color:
+        #2f718a;
+}
+
+.profile-dropdown-item:hover svg {
+    color:
+        #2f718a;
+}
+
+.dropdown-divider {
+    margin:
+        6px 4px;
+
+    background:
+        #e9eef2;
+}
+
+.admin-dropdown-item {
+    color:
+        #6b4c9a;
+
+    background:
+        #faf7fd;
+}
+
+.logout-dropdown-item {
+    color:
+        #c93645;
+}
+
+.logout-dropdown-item:hover {
+    background:
+        #fff4f5;
+
+    color:
+        #c93645;
+}
+
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.navbar-register {
+    height:
+        38px;
+
+    padding:
+        0 14px;
+
+    border-radius:
+        9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2f7788,
+            #46969b
+        );
+
+    font-size:
+        11px;
+
+    box-shadow:
+        0 5px 13px
+        rgba(47, 119, 136, 0.13);
+}
+
+.navbar-register:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #3a8996,
+            #53a3a0
+        );
+}
+
+
+/* =========================================================
+   SEARCH SUGGESTIONS
+========================================================= */
+
+.search-suggestions {
+    top:
+        calc(100% + 9px);
+
+    border:
+        1px solid #dce5eb;
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        0 20px 45px
+        rgba(20, 41, 60, 0.14),
+        0 5px 12px
+        rgba(20, 41, 60, 0.04);
+
+    max-height:
+        450px;
+}
+
+.search-suggestion-item {
+    padding:
+        11px 13px;
+
+    gap:
+        11px;
+}
+
+.search-suggestion-item:hover {
+    background:
+        #f5f9fb;
+}
+
+.search-suggestion-image {
+    width:
+        46px;
+
+    height:
+        46px;
+
+    border-radius:
+        9px;
+
+    background:
+        #f5f8fa;
+
+    border:
+        1px solid #e3e9ee;
+}
+
+.search-suggestion-name {
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    color:
+        #293b4b;
+}
+
+.search-suggestion-brand {
+    font-size:
+        10px;
+
+    color:
+        #7c8b98;
+}
+
+.search-suggestion-price {
+    font-size:
+        11px;
+
+    color:
+        #2f7d78;
+
+    font-weight:
+        800;
+}
+
+.search-suggestion-loading,
+.search-suggestion-empty {
+    padding:
+        20px;
+
+    color:
+        #788793;
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar-container {
+        gap:
+            13px;
+    }
+
+    .navbar-search-wrapper {
+        max-width:
+            none;
+    }
+
+    .navbar-link {
+        padding:
+            0 7px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .main-navbar {
+        padding:
+            8px 0;
+
+        height:
+            auto;
+    }
+
+    .navbar-container {
+        width:
+            calc(100% - 18px);
+
+        gap:
+            8px;
+    }
+
+    .navbar-search {
+        height:
+            44px;
+
+        border-radius:
+            11px;
+    }
+
+    .navbar-search button {
+        height:
+            36px;
+
+        padding:
+            0 13px;
+    }
+
+    .navbar-search input {
+        font-size:
+            12px;
+    }
+
+    .navbar-actions {
+        gap:
+            3px;
+    }
+
+    .navbar-icon-link {
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+    .profile-dropdown {
+        width:
+            min(
+                245px,
+                calc(100vw - 28px)
+            );
+    }
+}
+
+
+/* =========================================================
+   NEXACART OFFICIAL BRAND LOGO
+========================================================= */
+
+.navbar-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+/* =========================================================
+   OFFICIAL TRANSPARENT LOGO
+========================================================= */
+
+.navbar-brand-logo {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 56px;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    padding: 0;
+
+    margin: 0;
+
+    filter:
+        drop-shadow(
+            0 3px 6px
+            rgba(20, 42, 63, 0.12)
+        );
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* =========================================================
+   LOGO HOVER
+========================================================= */
+
+.navbar-logo:hover .navbar-brand-logo {
+    transform: scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 5px 9px
+            rgba(20, 42, 63, 0.16)
+        );
+}
+
+
+/* =========================================================
+   NEXACART WORDMARK
+========================================================= */
+
+.logo-text {
+    display: inline-flex;
+
+    align-items: center;
+
+    white-space: nowrap;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    font-weight: 850;
+
+    letter-spacing: -0.5px;
+
+    text-decoration: none;
+}
+
+
+/* Nexa */
+
+.logo-text-nexa {
+    color: #263b4d;
+}
+
+
+/* Cart */
+
+.logo-text-cart {
+    color: #c79b3f;
+}
+
+
+/* =========================================================
+   WORDMARK HOVER
+========================================================= */
+
+.navbar-logo:hover .logo-text-nexa {
+    color: #213546;
+}
+
+.navbar-logo:hover .logo-text-cart {
+    color: #b48732;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar-brand-logo {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .navbar-logo {
+        gap: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .navbar-brand-logo {
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .navbar-logo {
+        gap: 6px;
+    }
+}
+
+
+/* =========================================================
+   NEXACART PREMIUM NAVBAR LOGO
+========================================================= */
+
+.navbar-brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PREMIUM LOGO CONTAINER
+========================================================= */
+
+.navbar-premium-logo {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.navbar-brand-svg {
+    width: 58px;
+    height: 58px;
+
+    display: block;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(45, 140, 255, .25)
+        );
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.navbar-brand-text {
+    display: inline-flex;
+
+    align-items: center;
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -.7px;
+}
+
+.navbar-brand-nexa {
+    color: #24384c;
+}
+
+.navbar-brand-cart {
+    color: #d0a94d;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.navbar-brand:hover .navbar-brand-svg {
+    transform: scale(1.04);
+}
+
+.navbar-brand:hover .navbar-brand-nexa {
+    color: #1b3045;
+}
+
+.navbar-brand:hover .navbar-brand-cart {
+    color: #b68c32;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar-premium-logo {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+    }
+
+    .navbar-brand-svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .navbar-brand-text {
+        font-size: 22px;
+    }
+
+    .navbar-brand {
+        gap: 6px;
+    }
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN - FULL CLICKABLE ROW
+========================================================= */
+
+.profile-dropdown {
+    position: absolute;
+
+    z-index: 1000;
+}
+
+
+/* Every dropdown item uses the whole row */
+.profile-dropdown .profile-dropdown-item {
+    width: 100% !important;
+
+    min-height: 44px;
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 14px !important;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    text-decoration: none !important;
+}
+
+
+/* Link + button should behave the same */
+.profile-dropdown a.profile-dropdown-item,
+.profile-dropdown button.profile-dropdown-item {
+    width: 100% !important;
+}
+
+
+/* Button reset */
+.profile-dropdown button.profile-dropdown-item {
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    font: inherit;
+}
+
+
+/* Icons */
+.profile-dropdown .profile-dropdown-item svg {
+    flex: 0 0 auto;
+
+    width: 15px;
+    height: 15px;
+}
+
+
+/* Text */
+.profile-dropdown .profile-dropdown-item span {
+    flex: 1;
+
+    white-space: nowrap;
+}
+
+
+/* Hover */
+.profile-dropdown .profile-dropdown-item:hover {
+    background:
+        rgba(72, 143, 231, 0.08);
+
+    color:
+        #2f78c4;
+}
+
+
+/* Keyboard focus */
+.profile-dropdown .profile-dropdown-item:focus-visible {
+    outline:
+        2px solid
+        rgba(72, 143, 231, 0.45);
+
+    outline-offset:
+        -2px;
+}
+
+
+/* Logout */
+.profile-dropdown
+.logout-dropdown-item:hover {
+    color: #d9534f;
+
+    background:
+        rgba(217, 83, 79, 0.07);
+}

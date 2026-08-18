@@ -1,34 +1,100 @@
-const Order = require("../models/order");
+const Order = require("../models/Order");
+const Coupon = require("../models/Coupon");
 const Razorpay = require("../config/razorpay");
 const crypto = require("crypto");
+const mongoose = require("mongoose");
 
-//Create Razorpay Order
-const createPaymentOrder = async(req,res) => {
+
+// =========================================================
+// CREATE RAZORPAY ORDER
+// =========================================================
+
+const createPaymentOrder = async (req, res) => {
     try {
-        const{ amount } = req.body;
+        const { orderId } = req.body;
 
-        //Amount Validation
-        if(!amount) {
+        // =============================================
+        // VALIDATE ORDER ID
+        // =============================================
+
+        if (!orderId) {
             return res.status(400).json({
                 success: false,
-                message: "Amount is required",
+                message: "Order ID is required",
             });
         }
-        ///Razorpay Options
+
+        if (!mongoose.Types.ObjectId.isValid(orderId)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid Order ID",
+            });
+        }
+
+        // =============================================
+        // FIND USER ORDER
+        // =============================================
+
+        const order = await Order.findOne({
+            _id: orderId,
+            user: req.user.id,
+        });
+
+        if (!order) {
+            return res.status(404).json({
+                success: false,
+                message: "Order not found",
+            });
+        }
+
+        if (order.isPaid) {
+            return res.status(400).json({
+                success: false,
+                message: "Payment already verified",
+            });
+        }
+
+        // =============================================
+        // RAZORPAY OPTIONS
+        // =============================================
+
         const options = {
-            amount: amount* 100,    //Convert ₹ to Paisa
+            amount: Math.round(order.payableAmount * 100),
             currency: "INR",
-            receipt: `receipt_${Date.now()}`,
+            receipt: `receipt_${order._id}`,
         };
 
-        //Create Order
-        const order = await Razorpay.orders.create(options);
+        // =============================================
+        // CREATE RAZORPAY ORDER
+        // =============================================
+
+        const razorpayOrder =
+            await Razorpay.orders.create(options);
+
+        // =============================================
+        // SAVE RAZORPAY ORDER ID
+        // =============================================
+
+        order.razorpayOrderId = razorpayOrder.id;
+
+        await order.save();
+
+        // =============================================
+        // RESPONSE
+        // =============================================
+
         return res.status(200).json({
             success: true,
-            order,
+            order: razorpayOrder,
         });
-    }
-    catch(error){
+
+    } catch (error) {
+
+        console.error(
+            "Create Payment Order Error:",
+            error
+        );
+
         return res.status(500).json({
             success: false,
             message: error.message,
@@ -36,66 +102,171 @@ const createPaymentOrder = async(req,res) => {
     }
 };
 
-//Verify Payment Signature
-const verifyPayment = async(req, res) => {
+
+// =========================================================
+// VERIFY RAZORPAY PAYMENT
+// =========================================================
+
+const verifyPayment = async (req, res) => {
     try {
+
         const {
             orderId,
             razorpay_order_id,
             razorpay_payment_id,
             razorpay_signature,
-
         } = req.body;
 
-        //Generate Signature
-        const sign = razorpay_order_id + "|" + razorpay_payment_id;
-        const expectedSignature = crypto
-        
-            .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
-            .update(sign)
-            .digest("hex");
+        // =============================================
+        // BASIC VALIDATION
+        // =============================================
 
-            //Comapre Signature
-            if(expectedSignature === razorpay_signature) {
-                //const { orderId } = req.body;
-                const order = await Order.findById(orderId);
+        if (
+            !orderId ||
+            !razorpay_order_id ||
+            !razorpay_payment_id ||
+            !razorpay_signature
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Payment verification data is incomplete",
+            });
+        }
 
-                if (order) {
+        // =============================================
+        // VALIDATE MONGODB ORDER ID
+        // =============================================
 
-                    //Payment Success
-                    order.isPaid = true;
-                    
-                    // Save Razorpay Payment ID
-                    order.paymentId = razorpay_payment_id;
-                    
-                    // Save Payment Time
-                    order.paidAt = new Date();
+        if (!mongoose.Types.ObjectId.isValid(orderId)) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid Order ID",
+            });
+        }
 
-                    // Update Order Status
-                    order.orderStatus = "Processing";
-                    await order.save();
-                }
-                return res.status(200).json({
-                    success: true,
-                    message: "Payment Verified Successfully",
-                    order,
+        // =============================================
+        // FIND USER ORDER
+        // =============================================
 
-                });
-            }
+        const order = await Order.findOne({
+            _id: orderId,
+            user: req.user.id,
+        });
 
-            //Signature Wrong
+        if (!order) {
+            return res.status(404).json({
+                success: false,
+                message: "Order not found",
+            });
+        }
+
+        // =============================================
+        // CHECK RAZORPAY ORDER ID
+        // =============================================
+
+        if (
+            order.razorpayOrderId &&
+            order.razorpayOrderId !== razorpay_order_id
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Razorpay Order ID mismatch",
+            });
+        }
+
+        // =============================================
+        // GENERATE SIGNATURE
+        // =============================================
+
+        const sign =
+            razorpay_order_id +
+            "|" +
+            razorpay_payment_id;
+
+        const expectedSignature =
+            crypto
+                .createHmac(
+                    "sha256",
+                    process.env.RAZORPAY_KEY_SECRET
+                )
+                .update(sign)
+                .digest("hex");
+
+        // =============================================
+        // VERIFY SIGNATURE
+        // =============================================
+
+        if (
+            expectedSignature !==
+            razorpay_signature
+        ) {
             return res.status(400).json({
                 success: false,
                 message: "Invalid Payment Signature",
             });
-    }
-    catch(error) {
+        }
+
+        // =============================================
+        // PAYMENT SUCCESS
+        // =============================================
+
+        order.isPaid = true;
+
+        order.paymentId =
+            razorpay_payment_id;
+
+        order.paidAt = new Date();
+
+        order.orderStatus = "Processing";
+
+        await order.save();
+
+
+        // =============================================
+        // INCREMENT COUPON USAGE
+        // ONLY AFTER SUCCESSFUL PAYMENT
+        // =============================================
+
+        if (order.couponCode) {
+
+            await Coupon.findOneAndUpdate(
+                {
+                    code: order.couponCode,
+                },
+                {
+                    $inc: {
+                        usedCount: 1,
+                    },
+                }
+            );
+
+        }
+
+        // =============================================
+        // RESPONSE
+        // =============================================
+
+        return res.status(200).json({
+            success: true,
+            message: "Payment Verified Successfully",
+            order,
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Verify Payment Error:",
+            error
+        );
+
         return res.status(500).json({
             success: false,
             message: error.message,
         });
     }
 };
+
+
 module.exports = {
     createPaymentOrder,
     verifyPayment,

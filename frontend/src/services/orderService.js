@@ -1,13 +1,33 @@
 import axiosInstance from "./axiosInstance";
 
-// Place Order
+// =====================================================
+// PLACE ORDER
+// =====================================================
+
 export const placeOrder = (data) =>
     axiosInstance.post("/orders", data);
 
-// Get My Orders
+
+// =====================================================
+// GET MY ORDERS
+// =====================================================
+
 export const getMyOrders = () =>
     axiosInstance.get("/orders");
 
-// Get Single Order
+
+// =====================================================
+// GET SINGLE ORDER
+// =====================================================
+
 export const getSingleOrder = (id) =>
     axiosInstance.get(`/orders/${id}`);
+
+
+// Create Razorpay Order
+export const createPaymentOrder = (data) =>
+    axiosInstance.post("/payment/create-order", data);
+
+// Verify Razorpay Payment
+export const verifyPayment = (data) =>
+    axiosInstance.post("/payment/verify", data);

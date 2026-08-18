@@ -7,17 +7,13 @@ import Footer from "./Footer";
 function Layout() {
     return (
         <>
-            {/* Top Navigation */}
             <Navbar />
-            
-            {/* Page Content */}
-            <main className="container mt-4">
-                
+
+            <main className="mt-4">
                 <Outlet />
             </main>
-            
-            {/* Footer */}
-            <Footer/>
+
+            <Footer />
         </>
     );
 }

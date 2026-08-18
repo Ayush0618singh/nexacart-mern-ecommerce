@@ -1,7 +1,6 @@
 const Cart = require("../models/cart");
-
+ 
 //Add Product to Cart
-
 const addToCart = async (req, res) => {
     try {
         const { product, quantity } = req.body;
@@ -44,19 +43,70 @@ const addToCart = async (req, res) => {
 };
 
 //Get Logged In User Cart
-const getCartItems = async(req, res) => {
+// const getCartItems = async(req, res) => {
+//     try {
+//         if (!req.user?.id) {
+//             return res.status(401).json({
+//                 success: false,
+//                 message: "User authentication failed",
+//             });
+//         }
+//         const cart = await Cart.find({
+//             user: req.user.id,
+//         }).populate({
+//             path: "product",
+//             populate: {
+//                 path: "category",
+//                 model: "Category",
+//             },
+//         });
+
+//         res.status(200).json({
+//             success: true,
+//             count: cart.length,
+//             cart,
+//         });
+//     } catch (error) {
+//         res.status(500).json({
+//             success: false,
+//             message: error.message,
+//         });
+//     }
+// };
+
+//Get Logged In User Cart
+const getCartItems = async (req, res) => {
     try {
+
+        console.log("========== NAVBAR CART CHECK ==========");
+        console.log("Logged User ID:", req.user.id);
+
         const cart = await Cart.find({
             user: req.user.id,
+        }).populate({
+            path: "product",
+            populate: {
+                path: "category",
+                model: "Category",
+            },
+        });
 
-        }).populate("product");
+        console.log("Cart Items For This User:", cart.length);
+        console.log(
+            "Cart Item IDs:",
+            cart.map((item) => item._id.toString())
+        );
 
         res.status(200).json({
             success: true,
             count: cart.length,
             cart,
         });
+
     } catch (error) {
+
+        console.error("Get Cart Error:", error);
+
         res.status(500).json({
             success: false,
             message: error.message,

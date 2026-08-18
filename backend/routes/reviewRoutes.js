@@ -6,12 +6,18 @@ const{
     getProductReviews,
     updateReview,
     deleteReview,
+    getAllReviews,
 
 } = require("../controllers/reviewControllers");
 
-router.post("/",auth, addReview);
-router.get("/:productId", getProductReviews);
-router.put("/:id",auth, updateReview);
-router.delete("/:id",auth,deleteReview);
+router.post("/", auth, addReview);
+
+router.get("/admin/all", getAllReviews);
+
+router.get("/product/:productId", getProductReviews);
+
+router.put("/:id", auth, updateReview);
+
+router.delete("/:id", auth, deleteReview);
 
 module.exports = router;

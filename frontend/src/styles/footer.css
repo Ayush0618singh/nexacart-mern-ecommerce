@@ -1,0 +1,3030 @@
+/* =========================================================
+   NEXACART FOOTER
+   CLEAN / SINGLE SOURCE OF TRUTH
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(48, 100, 190, 0.14),
+            transparent 26%
+        ),
+        radial-gradient(
+            circle at 90% 18%,
+            rgba(33, 88, 164, 0.10),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #06172d 0%,
+            #071b34 45%,
+            #041326 100%
+        );
+
+    color: #ffffff;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BIG SALE BANNER
+========================================================= */
+
+.footer-offer {
+    position: relative;
+
+    width: calc(100% - 32px);
+    height: 230px;
+    min-height: 230px;
+
+    margin: 16px 16px 24px;
+
+    padding: 0;
+
+    display: block;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    isolation: isolate;
+
+    border: 1px solid rgba(77, 151, 239, 0.48);
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at 12% 50%,
+            rgba(42, 127, 255, 0.18),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 76% 45%,
+            rgba(20, 86, 170, 0.12),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #071b38 0%,
+            #0a2448 48%,
+            #081d3b 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        0 18px 45px rgba(2, 20, 45, 0.26);
+}
+
+
+/* =========================================================
+   SALE BANNER BORDER EFFECT
+========================================================= */
+
+.footer-offer::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 15;
+
+    border-radius: inherit;
+
+    padding: 1px;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 5%,
+            rgba(52, 138, 255, 0.45) 25%,
+            rgba(78, 165, 255, 0.80) 50%,
+            rgba(52, 138, 255, 0.36) 75%,
+            transparent 95%
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SALE BANNER LIGHT
+========================================================= */
+
+.footer-offer::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: 7%;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(42, 118, 237, 0.10),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SALE LOGO
+========================================================= */
+
+.offer-brand {
+    position: absolute;
+
+    left: 22px;
+    top: 50%;
+
+    width: 105px;
+    height: 105px;
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+}
+
+.offer-logo-glow {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(70,145,255,0.28) 0%,
+            rgba(54,125,240,0.13) 35%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+
+    animation:
+        offerGlowPulse 3s ease-in-out infinite;
+}
+
+.offer-logo-svg {
+    position: relative;
+
+    z-index: 2;
+
+    width: 96px;
+    height: 96px;
+
+    display: block;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(61,139,255,0.55)
+        )
+        drop-shadow(
+            0 0 15px
+            rgba(234,194,102,0.25)
+        );
+
+    animation:
+        offerLogoFloat 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SALE CONTENT
+   IMPORTANT:
+   This is the fixed normal-flow area.
+   Shop Now stays below the paragraph.
+========================================================= */
+
+.offer-content {
+    position: absolute;
+
+    left: 145px;
+    top: 50%;
+
+    width: 520px;
+    max-width: calc(50% - 145px);
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+}
+
+.offer-small {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #d9bc68;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+}
+
+.offer-content h2 {
+    margin: 0 0 8px;
+
+    max-width: 100%;
+
+    color: #f4d67e;
+
+    font-size: clamp(27px, 3vw, 43px);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+
+    text-transform: uppercase;
+}
+
+.offer-dash {
+    color: rgba(255,255,255,0.55);
+}
+
+.offer-white {
+    color: #ffffff;
+}
+
+.offer-content p {
+    max-width: 580px;
+
+    margin: 0 0 12px;
+
+    color: rgba(231,240,244,0.76);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SHOP NOW
+========================================================= */
+
+.offer-btn {
+    position: relative;
+
+    z-index: 25;
+
+    min-width: 128px;
+    min-height: 38px;
+
+    height: 38px;
+
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    align-self: flex-start;
+
+    gap: 8px;
+
+    margin: 0 !important;
+    padding: 0 15px;
+
+    border:
+        1px solid rgba(222,194,111,0.55);
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3d8c86,
+            #4c9e96
+        );
+
+    color: #f2d98c !important;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-decoration: none !important;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 18px rgba(52,137,129,0.18);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.offer-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #347a75,
+            #418d86
+        );
+
+    border-color: #d8bd6d;
+
+    color: #f7e3a6 !important;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 22px
+        rgba(52,137,129,0.23);
+}
+
+.offer-btn svg {
+    position: relative;
+
+    font-size: 10px;
+
+    transition:
+        transform .2s ease;
+}
+
+.offer-btn:hover svg {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   SALE PRODUCT IMAGE
+========================================================= */
+
+.offer-product-visual {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    -webkit-mask-image:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0,0,0,0.08) 7%,
+            rgba(0,0,0,0.40) 16%,
+            rgba(0,0,0,0.82) 28%,
+            #000000 38%,
+            #000000 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(0,0,0,0.08) 7%,
+            rgba(0,0,0,0.40) 16%,
+            rgba(0,0,0,0.82) 28%,
+            #000000 38%,
+            #000000 100%
+        );
+}
+
+.offer-product-visual img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center right;
+
+    border: 0;
+
+    transform: scale(1);
+
+    opacity: 0.95;
+
+    filter:
+        brightness(0.80)
+        saturate(0.88)
+        contrast(1.03);
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.35s ease;
+}
+
+.footer-offer:hover
+.offer-product-visual img {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.offer-product-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #071b38 0%,
+            #071b38 23%,
+            rgba(7,27,56,0.99) 33%,
+            rgba(7,27,56,0.88) 42%,
+            rgba(7,27,56,0.58) 51%,
+            rgba(7,27,56,0.24) 62%,
+            rgba(7,27,56,0.06) 76%,
+            rgba(7,27,56,0) 100%
+        );
+}
+
+.offer-product-overlay::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7,27,56,0.12) 0%,
+            transparent 18%,
+            transparent 82%,
+            rgba(7,27,56,0.18) 100%
+        );
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes offerGlowPulse {
+    0%,
+    100% {
+        opacity: .72;
+        transform: scale(.94);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.06);
+    }
+}
+
+@keyframes offerLogoFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer-newsletter {
+    position: relative;
+
+    width: calc(100% - 32px);
+
+    min-height: 165px;
+
+    margin: 0 16px 25px;
+
+    padding: 20px 24px;
+
+    display: grid;
+
+    grid-template-columns:
+        58px
+        minmax(0, 1fr)
+        minmax(430px, 1fr);
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(77,151,191,0.55);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #113665,
+            #123d70
+        );
+
+    box-shadow:
+        0 14px 32px
+        rgba(5,24,43,0.17);
+}
+
+.footer-newsletter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 8%,
+            rgba(57,140,248,0.30) 50%,
+            transparent 92%
+        );
+
+    opacity: .7;
+}
+
+.newsletter-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(227,195,107,0.55);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: #e1c376;
+
+    font-size: 20px;
+}
+
+.newsletter-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+.newsletter-content > span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #d8bb69;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.4px;
+}
+
+.newsletter-content h2 {
+    margin: 0 0 4px;
+
+    color: #ffffff;
+
+    font-size: clamp(19px,2vw,28px);
+
+    line-height: 1.08;
+
+    font-weight: 850;
+}
+
+.newsletter-content p {
+    margin: 0;
+
+    max-width: 560px;
+
+    color:
+        rgba(232,240,244,0.72);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   NEWSLETTER FORM
+========================================================= */
+
+.newsletter-form {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    box-sizing: border-box;
+}
+
+.newsletter-form input {
+    flex: 1 1 auto;
+
+    width: auto;
+    min-width: 0;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    outline: none;
+
+    border:
+        1px solid #9caec3;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    color: #26364a;
+
+    font-size: 11px;
+
+    box-sizing: border-box;
+}
+
+.newsletter-form input::placeholder {
+    color: #8a95a5;
+}
+
+.newsletter-form input:focus {
+    border-color: #6f9ed0;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(72,143,231,0.15);
+}
+
+.newsletter-form button {
+    position: relative;
+
+    flex: 0 0 145px;
+
+    width: 145px;
+    min-width: 145px;
+
+    height: 52px;
+
+    margin: 0;
+
+    padding: 0 16px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border:
+        1px solid rgba(255,221,145,0.90);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #a45b31 0%,
+            #d4935f 28%,
+            #efd7b7 48%,
+            #82abd0 70%,
+            #3e8fe8 100%
+        );
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 19px
+        rgba(35,105,180,0.28),
+        0 0 20px
+        rgba(69,147,244,0.24),
+        inset 0 1px 0
+        rgba(255,255,255,0.60);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        filter .22s ease;
+}
+
+.newsletter-form button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -125%;
+
+    width: 65%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(255,255,255,0.50),
+            transparent
+        );
+
+    transform: skewX(-18deg);
+
+    transition: left .6s ease;
+
+    pointer-events: none;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 11px 25px
+        rgba(28,100,184,0.34),
+        0 0 28px
+        rgba(67,148,255,0.32),
+        inset 0 1px 0
+        rgba(255,255,255,0.70);
+}
+
+.newsletter-form button:hover::before {
+    left: 150%;
+}
+
+.newsletter-form button:active {
+    transform: scale(.98);
+}
+
+.newsletter-form button span,
+.newsletter-form button svg {
+    position: relative;
+    z-index: 2;
+}
+
+.newsletter-form button svg {
+    font-size: 11px;
+
+    transition:
+        transform .22s ease;
+}
+
+.newsletter-form button:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+    width: calc(100% - 32px);
+    max-width: 1500px;
+
+    margin: 0 16px;
+
+    padding: 32px 28px 28px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        1fr
+        1.08fr
+        1fr
+        1.18fr;
+
+    gap: 35px;
+
+    border:
+        1px solid
+        rgba(215,227,234,0.09);
+
+    border-radius:
+        18px 18px 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #061a2d,
+            #061727
+        );
+
+    box-sizing: border-box;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-column > h4 {
+    margin: 0 0 12px;
+
+    color: #dfc176;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    letter-spacing: .15px;
+}
+
+.footer-column > a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    color:
+        rgba(228,237,241,0.74);
+
+    font-size: 9px;
+
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+.footer-column > a span {
+    color: #63b7b2;
+
+    font-size: 12px;
+}
+
+.footer-column > a:hover {
+    color: #ffffff;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+    padding-right: 25px;
+
+    border-right:
+        1px solid
+        rgba(218,228,234,0.10);
+}
+
+.footer-logo {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f3150,
+            #103e5a
+        );
+
+    color: #e0c376;
+
+    font-size: 19px;
+}
+
+.brand-description {
+    max-width: 270px;
+
+    margin: 0 0 15px;
+
+    color:
+        rgba(231,239,243,0.73);
+
+    font-size: 10px;
+
+    line-height: 1.72;
+}
+
+.follow-title {
+    margin: 0 0 9px;
+
+    color: #d8bc70;
+
+    font-size: 10px;
+
+    font-weight: 850;
+}
+
+.footer-social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 42px;
+
+    margin: 0;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        background .22s ease,
+        border-color .22s ease;
+}
+
+.gmail-icon {
+    background: #ffffff;
+
+    border: 1px solid #dfe5ec;
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,0.14);
+}
+
+.gmail-icon:hover {
+    background: #fffdfb;
+
+    border-color: #ead2cf;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px
+        rgba(234,67,53,0.20);
+}
+
+.gmail-brand-svg {
+    width: 28px;
+    height: 22px;
+}
+
+.linkedin-icon {
+    background: #0A66C2;
+
+    border: 1px solid #0A66C2;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 15px
+        rgba(10,102,194,0.28);
+}
+
+.linkedin-icon:hover {
+    background: #004182;
+
+    border-color: #004182;
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px
+        rgba(10,102,194,0.38);
+}
+
+.linkedin-brand-svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact .footer-email-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 10px;
+
+    color: #dbe6f3;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.footer-contact .footer-email-link svg {
+    width: 16px;
+    height: 16px;
+
+    flex: 0 0 16px;
+
+    color: #ea4335;
+}
+
+.footer-contact .footer-email-link:hover {
+    color: #ffffff;
+}
+
+.footer-contact p {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 7px;
+
+    margin: 0 0 8px;
+
+    color:
+        rgba(226,235,239,0.71);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+.footer-contact .support-line {
+    margin-top: 3px;
+
+    color: #d9bd70;
+
+    font-weight: 850;
+}
+
+.footer-contact .support-hours {
+    max-width: 240px;
+
+    font-size: 8px;
+
+    line-height: 1.65;
+}
+
+.contact-payments {
+    margin-top: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.secure-payment-label {
+    width: 100%;
+
+    color: #d6bb71;
+
+    font-size: 8px;
+
+    font-weight: 850;
+}
+
+.payment-logo {
+    min-height: 28px;
+
+    padding: 0 8px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border:
+        1px solid
+        rgba(216,228,234,0.10);
+
+    border-radius: 7px;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    color: #dce7eb;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.payment-logo svg {
+    font-size: 14px;
+}
+
+.razorpay {
+    color: #74a9ec;
+}
+
+.upi-payment {
+    color: #f3d27d;
+}
+
+
+/* =========================================================
+   BOTTOM FOOTER
+========================================================= */
+
+.footer-bottom {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 12px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-top:
+        1px solid
+        rgba(104,145,190,0.12);
+
+    background: #021225;
+}
+
+.footer-copyright {
+    max-width: 950px;
+
+    margin: 0;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    color: #aebdce;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+.copyright-dot {
+    color: #63b7b2;
+}
+
+.copyright-brand {
+    font-weight: 900;
+}
+
+.copyright-nexa,
+.copyright-cart {
+    color: #e0c376;
+}
+
+.copyright-premium {
+    color: #e7c76f;
+    font-weight: 850;
+}
+
+
+/* =========================================================
+   PAYMENT BADGES
+========================================================= */
+
+.payment-badges {
+    position: absolute;
+
+    right: 22px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.payment-badges > span {
+    min-width: 32px;
+    min-height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 7px;
+
+    border:
+        1px solid
+        rgba(147,170,197,0.16);
+
+    border-radius: 6px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    color: #d8e2ef;
+
+    font-size: 8px;
+}
+
+.payment-badges svg {
+    font-size: 14px;
+}
+
+.payment-badges .upi-badge {
+    color: #d7e2ef;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS FOOTER
+========================================================= */
+
+.footer-product-details {
+    margin-top: 34px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071d2f 0%,
+            #061727 100%
+        );
+
+    border-top:
+        1px solid
+        rgba(220,193,121,0.12);
+
+    box-shadow:
+        0 -10px 30px
+        rgba(7,29,47,0.08);
+}
+
+.footer-product-details .footer-main {
+    width:
+        min(
+            1120px,
+            calc(100% - 34px)
+        );
+
+    margin: 0 auto;
+
+    padding: 30px 24px 25px;
+
+    grid-template-columns:
+        1.15fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 34px;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+}
+
+.footer-product-details .footer-brand {
+    padding-right: 22px;
+
+    border-right:
+        1px solid
+        rgba(207,220,228,0.10);
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS PREMIUM BRAND
+========================================================= */
+
+.footer-product-details .footer-premium-logo {
+    position: relative;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102f49,
+            #0b2237
+        );
+
+    border:
+        1px solid
+        rgba(224,195,111,0.35);
+
+    box-shadow:
+        0 10px 24px rgba(0,0,0,.20),
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+}
+
+.footer-product-details .footer-premium-logo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(223,190,94,.14);
+
+    filter: blur(10px);
+}
+
+.footer-product-details .footer-premium-logo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 42px;
+    height: 20px;
+
+    border:
+        1.5px solid
+        rgba(224,195,111,.72);
+
+    border-radius: 50%;
+
+    transform: rotate(-28deg);
+}
+
+.footer-product-details .footer-premium-logo span {
+    position: relative;
+
+    z-index: 2;
+
+    color: #e1c572;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+.footer-product-details .footer-brand-name {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin-bottom: 11px;
+}
+
+.footer-product-details .footer-brand-name strong {
+    color: #e0c376;
+
+    font-size: 19px;
+
+    font-weight: 850;
+}
+
+.footer-product-details .footer-brand-name span {
+    color: #e0c376;
+
+    font-size: 8px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.footer-product-details .brand-description {
+    max-width: 290px;
+
+    margin-bottom: 17px;
+
+    color:
+        rgba(235,241,244,.82);
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1.75;
+}
+
+.footer-product-details .follow-title {
+    margin-bottom: 9px;
+
+    color: #e0c376;
+
+    font-size: 11px;
+
+    font-weight: 850;
+}
+
+.footer-product-details .footer-social {
+    margin-top: 0;
+}
+
+.footer-product-details .footer-social a {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+
+    border:
+        1px solid
+        rgba(213,226,232,0.10);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.04);
+}
+
+.footer-product-details .footer-social a:hover {
+    background:
+        rgba(255,255,255,0.08);
+
+    border-color:
+        rgba(224,195,111,0.25);
+}
+
+.footer-product-details .footer-column:not(.footer-brand) h4 {
+    margin-bottom: 14px;
+
+    color: #e0c376;
+
+    font-size: 12px;
+
+    font-weight: 850;
+}
+
+.footer-product-details .footer-column:not(.footer-brand) a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 9px;
+
+    color:
+        rgba(228,237,241,.75);
+
+    font-size: 10px;
+
+    text-decoration: none;
+}
+
+.footer-product-details .footer-column:not(.footer-brand) a span {
+    color: #5ab0b0;
+
+    font-size: 13px;
+}
+
+.footer-product-details .footer-column:not(.footer-brand) a:hover {
+    color: #ffffff;
+
+    transform: translateX(2px);
+}
+
+.footer-product-details .footer-main::after {
+    display: none;
+}
+
+.footer-product-details .footer-bottom {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    background:
+        rgba(0,0,0,.10);
+}
+
+.footer-product-details .footer-copyright {
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    color:
+        rgba(235,241,244,.78);
+
+    font-size: 10px;
+}
+
+.footer-product-details .copyright-dot {
+    color: #63b7b2;
+}
+
+.footer-product-details .copyright-nexa,
+.footer-product-details .copyright-cart,
+.footer-product-details .copyright-premium {
+    color: #e0c376 !important;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   DESKTOP / LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .footer-offer {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .offer-brand {
+        left: 14px;
+
+        width: 88px;
+        height: 88px;
+    }
+
+    .offer-logo-svg {
+        width: 82px;
+        height: 82px;
+    }
+
+    .offer-content {
+        left: 112px;
+
+        width: 440px;
+        max-width: calc(55% - 112px);
+    }
+
+    .offer-content h2 {
+        font-size: 27px;
+    }
+
+    .offer-product-visual {
+        width: 50%;
+    }
+
+    .footer-main {
+        grid-template-columns:
+            1.2fr
+            1fr
+            1fr;
+
+        gap: 28px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+
+        padding-right: 0;
+        padding-bottom: 20px;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid
+            rgba(142,169,199,0.15);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-offer {
+        height: auto;
+
+        min-height: 220px;
+    }
+
+    .footer-newsletter {
+        grid-template-columns:
+            58px
+            minmax(0,1fr);
+    }
+
+    .newsletter-form {
+        grid-column: 1 / -1;
+    }
+
+    .footer-product-details .footer-main {
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap: 28px;
+    }
+
+    .footer-product-details .footer-brand {
+        grid-column: 1 / -1;
+
+        padding-right: 0;
+        padding-bottom: 18px;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid
+            rgba(207,220,228,.10);
+    }
+
+    .payment-badges {
+        position: static;
+
+        transform: none;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .footer-offer {
+        width: calc(100% - 20px);
+
+        margin:
+            10px 10px 18px;
+
+        height: auto;
+
+        min-height: 410px;
+
+        padding: 0;
+    }
+
+    .offer-brand {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 75px;
+        height: 75px;
+
+        margin: 14px auto 2px;
+
+        transform: none;
+    }
+
+    .offer-logo-svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .offer-content {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: calc(100% - 36px);
+        max-width: none;
+
+        margin: 0 auto;
+
+        padding: 4px 0 0;
+
+        transform: none;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .offer-small {
+        font-size: 8px;
+    }
+
+    .offer-content h2 {
+        max-width: 100%;
+
+        white-space: normal;
+
+        font-size: 25px;
+    }
+
+    .offer-content p {
+        max-width: 100%;
+
+        font-size: 9px;
+    }
+
+    .offer-btn {
+        align-self: center;
+    }
+
+    .offer-product-visual {
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 46%;
+
+        -webkit-mask-image:
+            linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(0,0,0,.25) 20%,
+                #000 55%,
+                #000 100%
+            );
+
+        mask-image:
+            linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(0,0,0,.25) 20%,
+                #000 55%,
+                #000 100%
+            );
+    }
+
+    .offer-product-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                #071b38 0%,
+                #071b38 34%,
+                rgba(7,27,56,.86) 52%,
+                rgba(7,27,56,.28) 74%,
+                rgba(7,27,56,0) 100%
+            );
+    }
+
+    .footer-newsletter {
+        width: calc(100% - 20px);
+
+        margin:
+            10px 10px 18px;
+
+        min-height: 0;
+
+        padding: 18px;
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        border-radius: 14px;
+    }
+
+    .newsletter-icon {
+        margin: 0 auto;
+
+        width: 44px;
+        height: 44px;
+    }
+
+    .newsletter-content h2 {
+        font-size: 20px;
+    }
+
+    .newsletter-content p {
+        font-size: 9px;
+    }
+
+    .newsletter-form {
+        grid-column: auto;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+
+        height: 48px;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+        min-width: 0;
+
+        flex: 0 0 48px;
+
+        height: 48px;
+    }
+
+    .footer-main {
+        width: calc(100% - 20px);
+
+        margin: 0 10px;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 24px 18px;
+
+        padding: 24px 18px;
+
+        border-radius: 14px 14px 0 0;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-column > h4 {
+        font-size: 11px;
+    }
+
+    .footer-column > a {
+        font-size: 9px;
+    }
+
+    .footer-bottom {
+        width: 100%;
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding:
+            15px 12px;
+    }
+
+    .footer-copyright {
+        max-width: 100%;
+
+        text-align: center;
+
+        justify-content: center;
+
+        font-size: 8px;
+    }
+
+    .payment-badges {
+        position: static;
+
+        justify-content: center;
+
+        transform: none;
+
+        flex-wrap: wrap;
+    }
+
+    .footer-product-details .footer-main {
+        width: calc(100% - 20px);
+
+        margin: 0 10px;
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        padding: 24px 18px;
+    }
+
+    .footer-product-details .footer-brand {
+        grid-column: auto;
+
+        padding-right: 0;
+    }
+
+    .footer-product-details .footer-copyright {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-content h2 {
+        font-size: 22px;
+    }
+
+    .newsletter-content h2 {
+        font-size: 21px;
+    }
+
+    .footer-social a {
+        width: 39px;
+        height: 39px;
+
+        flex-basis: 39px;
+    }
+
+    .gmail-brand-svg {
+        width: 23px;
+        height: 18px;
+    }
+
+    .linkedin-brand-svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+
+/* =========================================================
+   SHOP NOW - MATCH NEWSLETTER SUBSCRIBE
+========================================================= */
+
+.footer .footer-offer .offer-btn {
+    background:
+        linear-gradient(
+            110deg,
+            #a45b31 0%,
+            #d4935f 28%,
+            #efd7b7 48%,
+            #82abd0 70%,
+            #3e8fe8 100%
+        ) !important;
+
+    border:
+        1px solid
+        rgba(255, 221, 145, 0.90) !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 8px 19px
+        rgba(35, 105, 180, 0.28),
+
+        0 0 20px
+        rgba(69, 147, 244, 0.24),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.60) !important;
+}
+
+.footer .footer-offer .offer-btn:hover {
+    background:
+        linear-gradient(
+            110deg,
+            #b86638 0%,
+            #df9d68 28%,
+            #f1dfc5 48%,
+            #8db8dc 70%,
+            #4b99ed 100%
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    transform:
+        translateY(-2px) !important;
+
+    filter:
+        brightness(1.08) !important;
+
+    box-shadow:
+        0 11px 25px
+        rgba(28, 100, 184, 0.34),
+
+        0 0 28px
+        rgba(67, 148, 255, 0.32),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.70) !important;
+}
+
+.footer .footer-offer .offer-btn svg {
+    color:
+        #ffffff !important;
+}
+
+
+
+/* =========================================================
+   NEWSLETTER - PREMIUM BRIGHTER LOOK
+========================================================= */
+
+/* Heading - Golden */
+.footer .footer-newsletter .newsletter-content h2 {
+    color: #e5c875 !important;
+
+    text-shadow:
+        0 0 10px
+        rgba(229, 200, 117, 0.12);
+}
+
+
+/* Slightly brighter newsletter background */
+.footer .footer-newsletter {
+    background:
+        radial-gradient(
+            circle at 8% 50%,
+            rgba(77, 157, 255, 0.22),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 82% 48%,
+            rgba(66, 129, 220, 0.18),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #123e73 0%,
+            #174b86 52%,
+            #123b70 100%
+        ) !important;
+
+    border-color:
+        rgba(101, 171, 241, 0.58) !important;
+
+    box-shadow:
+        0 15px 36px
+        rgba(4, 27, 54, 0.20),
+        inset 0 1px 0
+        rgba(255,255,255,0.08) !important;
+}
+
+
+
+/* =========================================================
+   FINAL FOOTER TEXT READABILITY
+========================================================= */
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer .footer-newsletter .newsletter-content > span {
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.5px !important;
+}
+
+.footer .footer-newsletter .newsletter-content h2 {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+    font-weight: 900 !important;
+}
+
+.footer .footer-newsletter .newsletter-content p {
+    font-size: 11px !important;
+    line-height: 1.65 !important;
+}
+
+
+/* Input */
+.footer .footer-newsletter .newsletter-form input {
+    font-size: 12px !important;
+}
+
+
+/* Subscribe */
+.footer .footer-newsletter .newsletter-form button {
+    font-size: 11px !important;
+    font-weight: 850 !important;
+}
+
+
+/* =========================================================
+   MAIN FOOTER HEADINGS
+========================================================= */
+
+.footer:not(.footer-product-details)
+.footer-column > h4 {
+    font-size: 14px !important;
+    font-weight: 900 !important;
+
+    margin-bottom: 14px !important;
+}
+
+
+/* Footer links */
+.footer:not(.footer-product-details)
+.footer-column > a {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+
+    margin-bottom: 9px !important;
+}
+
+
+/* Arrow */
+.footer:not(.footer-product-details)
+.footer-column > a span {
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   BRAND DESCRIPTION
+========================================================= */
+
+.footer:not(.footer-product-details)
+.brand-description {
+    font-size: 12px !important;
+    line-height: 1.75 !important;
+}
+
+
+/* Follow title */
+.footer:not(.footer-product-details)
+.follow-title {
+    font-size: 12px !important;
+    font-weight: 900 !important;
+
+    margin-bottom: 10px !important;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.footer:not(.footer-product-details)
+.footer-contact .footer-email-link {
+    font-size: 11px !important;
+    font-weight: 800 !important;
+}
+
+.footer:not(.footer-product-details)
+.footer-contact p {
+    font-size: 10px !important;
+    line-height: 1.6 !important;
+}
+
+.footer:not(.footer-product-details)
+.footer-contact .support-line {
+    font-size: 11px !important;
+}
+
+.footer:not(.footer-product-details)
+.footer-contact .support-hours {
+    font-size: 10px !important;
+    line-height: 1.65 !important;
+}
+
+
+/* Secure Payments */
+.footer:not(.footer-product-details)
+.secure-payment-label {
+    font-size: 9px !important;
+}
+
+.footer:not(.footer-product-details)
+.payment-logo {
+    font-size: 9px !important;
+}
+
+
+/* =========================================================
+   BOTTOM COPYRIGHT
+========================================================= */
+
+.footer:not(.footer-product-details)
+.footer-copyright {
+    font-size: 10px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   HOME / NORMAL FOOTER BRAND NAME
+========================================================= */
+
+.footer:not(.footer-product-details)
+.footer-brand-name strong {
+    display: block;
+
+    color: #e0c376 !important;
+
+    font-size: 22px !important;
+
+    line-height: 1.15 !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: -.3px;
+}
+
+
+/* =========================================================
+   MOBILE - KEEP READABLE WITHOUT BECOMING HUGE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .footer .footer-newsletter .newsletter-content h2 {
+        font-size: 23px !important;
+    }
+
+    .footer .footer-newsletter .newsletter-content p {
+        font-size: 10px !important;
+    }
+
+    .footer:not(.footer-product-details)
+    .footer-column > h4 {
+        font-size: 12px !important;
+    }
+
+    .footer:not(.footer-product-details)
+    .footer-column > a {
+        font-size: 10px !important;
+    }
+
+    .footer:not(.footer-product-details)
+    .brand-description {
+        font-size: 11px !important;
+    }
+
+    .footer:not(.footer-product-details)
+    .footer-contact p {
+        font-size: 9px !important;
+    }
+
+    .footer:not(.footer-product-details)
+    .footer-copyright {
+        font-size: 9px !important;
+    }
+}
+
+
+/* =========================================================
+   PREMIUM FOOTER BRAND LOGO
+========================================================= */
+
+.footer .footer-logo-premium {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102f49,
+            #0b2237
+        );
+
+    border:
+        1px solid
+        rgba(224, 195, 111, .35);
+
+    box-shadow:
+        0 10px 24px
+        rgba(0, 0, 0, .18),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, .08);
+
+    overflow: hidden;
+}
+
+.footer .footer-brand-svg {
+    width: 52px;
+    height: 52px;
+
+    display: block;
+
+    overflow: visible;
+}
+
+
+/* Product Details footer me thoda compact */
+.footer-product-details .footer-logo-premium {
+    width: 52px;
+    height: 52px;
+}
+
+.footer-product-details .footer-brand-svg {
+    width: 47px;
+    height: 47px;
+}
+
+
+
+/* =========================================================
+   FINAL - COHESIVE PREMIUM FOOTER BACKGROUND
+========================================================= */
+
+/* Main footer overall background */
+.footer {
+    background:
+        linear-gradient(
+            180deg,
+            #061a2d 0%,
+            #071d32 45%,
+            #051727 100%
+        ) !important;
+}
+
+
+/* =========================================================
+   BIG SALE
+========================================================= */
+
+.footer .footer-offer {
+    background:
+        linear-gradient(
+            135deg,
+            #071c35 0%,
+            #0a2745 52%,
+            #071d36 100%
+        ) !important;
+
+    border-color:
+        rgba(91, 153, 201, 0.42) !important;
+
+    box-shadow:
+        0 18px 40px
+        rgba(2, 20, 38, 0.24),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+   Slightly brighter, but same navy family
+========================================================= */
+
+.footer .footer-newsletter {
+    background:
+        linear-gradient(
+            135deg,
+            #0c2847 0%,
+            #10345a 50%,
+            #0b2948 100%
+        ) !important;
+
+    border-color:
+        rgba(96, 159, 207, 0.45) !important;
+
+    box-shadow:
+        0 14px 34px
+        rgba(3, 22, 44, 0.18),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer .footer-main {
+    background:
+        linear-gradient(
+            180deg,
+            #061b2e 0%,
+            #051827 100%
+        ) !important;
+
+    border-color:
+        rgba(177, 201, 219, 0.08) !important;
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.footer .footer-bottom {
+    background:
+        #041321 !important;
+
+    border-top-color:
+        rgba(145, 173, 197, 0.10) !important;
+}
+
+
+
+/* =========================================================
+   PREMIUM NEWSLETTER HEADING + BACKGROUND
+========================================================= */
+
+.footer .footer-newsletter {
+    position: relative !important;
+    overflow: hidden !important;
+
+    background:
+        radial-gradient(
+            circle at 12% 50%,
+            rgba(87, 174, 255, 0.15),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 78% 20%,
+            rgba(224, 195, 111, 0.08),
+            transparent 22%
+        ),
+        linear-gradient(
+            135deg,
+            #0a213a 0%,
+            #0d2d4c 45%,
+            #0a263f 72%,
+            #071d32 100%
+        ) !important;
+
+    border:
+        1px solid
+        rgba(100, 164, 214, 0.42) !important;
+
+    box-shadow:
+        0 16px 38px
+        rgba(2, 18, 35, 0.24),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.06) !important;
+}
+
+
+/* soft ambient glow */
+.footer .footer-newsletter::after {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -80px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(91, 156, 220, 0.12),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   STAY UPDATED
+========================================================= */
+
+.footer .footer-newsletter .newsletter-content > span {
+    color:
+        #e4c36f !important;
+
+    font-size:
+        10px !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        2px !important;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        0 0 12px
+        rgba(228,195,111,0.12);
+}
+
+
+/* =========================================================
+   MAIN NEWSLETTER HEADING
+========================================================= */
+
+.footer .footer-newsletter .newsletter-content h2 {
+    position: relative;
+
+    margin:
+        0 0 8px !important;
+
+    color:
+        transparent !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f2d782 0%,
+            #f0cf70 32%,
+            #ffffff 70%,
+            #dcecff 100%
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    font-size:
+        clamp(
+            26px,
+            2.7vw,
+            36px
+        ) !important;
+
+    line-height:
+        1.05 !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        -0.8px !important;
+
+    text-shadow:
+        0 4px 18px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+
+/* small premium underline */
+.footer .footer-newsletter .newsletter-content h2::after {
+    content: "";
+
+    display: block;
+
+    width: 62px;
+    height: 3px;
+
+    margin-top: 9px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d9b961,
+            #68aeb0
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(
+            103,
+            174,
+            176,
+            0.16
+        );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.footer .footer-newsletter .newsletter-content p {
+    max-width:
+        600px !important;
+
+    margin:
+        12px 0 0 !important;
+
+    color:
+        rgba(
+            232,
+            241,
+            245,
+            0.78
+        ) !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.65 !important;
+}
+
+
+/* =========================================================
+   NEWSLETTER ICON
+========================================================= */
+
+.footer .footer-newsletter .newsletter-icon {
+    position: relative;
+    z-index: 3;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(228,195,111,0.16),
+            rgba(82,148,215,0.12)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(228,195,111,0.45) !important;
+
+    color:
+        #e4c36f !important;
+
+    font-size:
+        22px !important;
+
+    box-shadow:
+        0 8px 22px
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        ),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.08);
+}
+
+
+/* =========================================================
+   FORM CONTAINER
+========================================================= */
+
+.footer .footer-newsletter .newsletter-form {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.footer .footer-newsletter .newsletter-form input {
+    height:
+        52px !important;
+
+    border-radius:
+        12px !important;
+
+    border:
+        1px solid
+        rgba(
+            193,
+            208,
+            224,
+            0.85
+        ) !important;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.98
+        ) !important;
+
+    font-size:
+        12px !important;
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.07
+        ) !important;
+}
+
+
+/* =========================================================
+   SUBSCRIBE BUTTON
+========================================================= */
+
+.footer .footer-newsletter .newsletter-form button {
+    height:
+        52px !important;
+
+    border-radius:
+        12px !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        900 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .footer .footer-newsletter .newsletter-content h2 {
+        font-size:
+            24px !important;
+    }
+
+    .footer .footer-newsletter .newsletter-content p {
+        font-size:
+            10px !important;
+    }
+}
+
+
+/* =========================================================
+   FOOTER BRAND DESCRIPTION - FINAL POSITION
+========================================================= */
+
+.footer:not(.footer-product-details) .brand-description {
+    margin-top: 6px !important;
+    margin-bottom: 17px !important;
+
+    font-size: 10px !important;
+    line-height: 1.65 !important;
+}
+
+
+
+/* =========================================================
+   SHOP NOW - FINAL CLICK / LAYER FIX
+========================================================= */
+
+.footer .footer-offer {
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+
+/* Content stays above every visual layer */
+.footer .footer-offer .offer-content {
+    position: absolute !important;
+
+    z-index: 100 !important;
+
+    pointer-events: auto !important;
+}
+
+
+/* Shop Now always clickable */
+.footer .footer-offer .offer-btn {
+    position: relative !important;
+
+    z-index: 200 !important;
+
+    display: inline-flex !important;
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+}
+
+
+/* Children should not steal the click */
+.footer .footer-offer .offer-btn span,
+.footer .footer-offer .offer-btn svg {
+    pointer-events: none !important;
+}
+
+
+/* Visual layers never receive clicks */
+.footer .footer-offer .offer-product-visual,
+.footer .footer-offer .offer-product-overlay,
+.footer .footer-offer::before,
+.footer .footer-offer::after {
+    pointer-events: none !important;
+}
+
+
+/* Product image stays behind content */
+.footer .footer-offer .offer-product-visual {
+    z-index: 1 !important;
+}
+
+.footer .footer-offer .offer-product-overlay {
+    z-index: 2 !important;
+}
+
+
+/* =========================================================
+   CRAFTED BY - PREMIUM ACCENT
+========================================================= */
+
+.footer .footer-copyright .crafted-by {
+    color: #63b7b2 !important;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15px;
+
+    text-shadow:
+        0 0 8px
+        rgba(99, 183, 178, 0.16);
+}
+

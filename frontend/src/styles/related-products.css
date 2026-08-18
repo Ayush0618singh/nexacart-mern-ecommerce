@@ -1,0 +1,111 @@
+/* =========================================================
+   NEXACART RELATED PRODUCTS
+========================================================= */
+
+.related-products-wrapper {
+    width: 100%;
+
+    margin-top: 48px;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid #dce5ea;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .related-products-wrapper {
+        margin-top: 40px;
+
+        padding-top: 30px;
+    }
+}
+
+
+
+/* =========================================================
+   RELATED PRODUCTS - PREMIUM ADD TO CART
+========================================================= */
+
+.related-products-wrapper
+.product-cart-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #2f7f78,
+            #3f9189
+        ) !important;
+
+    border:
+        1px solid #4d9f97 !important;
+
+    color:
+        #e2c36f !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        850 !important;
+
+    border-radius:
+        8px !important;
+
+    box-shadow:
+        0 4px 10px
+        rgba(47, 127, 120, .14);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.related-products-wrapper
+.product-cart-btn:hover:not(:disabled) {
+    background:
+        linear-gradient(
+            135deg,
+            #286f69,
+            #377f78
+        ) !important;
+
+    border-color:
+        #d0b15c !important;
+
+    color:
+        #f0d887 !important;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(47, 127, 120, .22);
+}
+
+.related-products-wrapper
+.product-cart-btn:disabled {
+    background:
+        #dce4e5 !important;
+
+    border-color:
+        #dce4e5 !important;
+
+    color:
+        #7c888c !important;
+
+    box-shadow:
+        none;
+
+    cursor:
+        not-allowed;
+}
