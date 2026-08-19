@@ -6,7 +6,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-// Load Environment Variables
 dotenv.config();
 
 const connectDB = require("./config/db");
@@ -31,39 +30,19 @@ connectDB();
 
 const app = express();
 
-/* =========================
-   CORS
-========================= */
-
+/* CORS */
 app.use(
     cors({
         origin: true,
         credentials: true,
-        methods: [
-            "GET",
-            "POST",
-            "PUT",
-            "PATCH",
-            "DELETE",
-            "OPTIONS",
-        ],
-        allowedHeaders: [
-            "Content-Type",
-            "Authorization",
-        ],
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
 
-/* =========================
-   BODY PARSER
-========================= */
-
 app.use(express.json());
 
-/* =========================
-   API ROUTES
-========================= */
-
+/* Routes */
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes);
@@ -77,17 +56,9 @@ app.use("/api/support", supportRoutes);
 app.use("/api/newsletter", newsletterRoutes);
 app.use("/api/coupons", couponRoutes);
 
-/* =========================
-   ROOT ROUTE
-========================= */
-
 app.get("/", (req, res) => {
     res.status(200).send("E-Commerce API Running...");
 });
-
-/* =========================
-   PROTECTED PROFILE ROUTE
-========================= */
 
 app.get("/api/profile", auth, (req, res) => {
     res.status(200).json({
@@ -97,18 +68,10 @@ app.get("/api/profile", auth, (req, res) => {
     });
 });
 
-/* =========================
-   ERROR HANDLER
-========================= */
-
 app.use(errorHandler);
-
-/* =========================
-   SERVER
-========================= */
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server Running on Port ${PORT}`);
 });
