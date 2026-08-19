@@ -1,4 +1,4 @@
- import React, {
+import React, {
     useContext,
     useEffect,
     useRef,
@@ -27,6 +27,8 @@ import {
 } from "react-icons/fa";
 
 import { getAllProducts } from "../../services/productService";
+import { getCartItems } from "../../services/cartService";
+import { getWishlist } from "../../services/wishlistService";
 
 import "../../styles/navbar.css";
 
@@ -75,73 +77,50 @@ function Navbar() {
         const fetchNavbarCounts = async () => {
 
             if (!user) {
+
                 setCartCount(0);
                 setWishlistCount(0);
+
                 return;
             }
 
             try {
 
-                const token = localStorage.getItem("token");
-
-                if (!token) {
-                    setCartCount(0);
-                    setWishlistCount(0);
-                    return;
-                }
+                const [cartResponse, wishlistResponse] =
+                    await Promise.all([
+                        getCartItems(),
+                        getWishlist(),
+                    ]);
 
 
                 // =================================================
                 // CART COUNT
                 // =================================================
 
-                const cartResponse = await fetch(
-                    "http://localhost:5000/api/cart",
-                    {
-                        headers: {
-                            Authorization:
-                                `Bearer ${token}`,
-                        },
-                    }
-                );
-
-
-                if (cartResponse.ok) {
-
-                    const cartData =
-                        await cartResponse.json();
-
-                    setCartCount(
-                        cartData.count || 0
+                const validCart =
+                    (cartResponse.data.cart || []).filter(
+                        (item) =>
+                            item.product !== null
                     );
-                }
+
+                setCartCount(
+                    validCart.length
+                );
 
 
                 // =================================================
                 // WISHLIST COUNT
                 // =================================================
 
-                const wishlistResponse =
-                    await fetch(
-                        "http://localhost:5000/api/wishlist",
-                        {
-                            headers: {
-                                Authorization:
-                                    `Bearer ${token}`,
-                            },
-                        }
+                const validWishlist =
+                    (wishlistResponse.data.wishlist || []).filter(
+                        (item) =>
+                            item.product !== null
                     );
 
-
-                if (wishlistResponse.ok) {
-
-                    const wishlistData =
-                        await wishlistResponse.json();
-
-                    setWishlistCount(
-                        wishlistData.count || 0
-                    );
-                }
+                setWishlistCount(
+                    validWishlist.length
+                );
 
             } catch (error) {
 
@@ -158,7 +137,7 @@ function Navbar() {
 
         fetchNavbarCounts();
 
-    }, [user]);
+    }, [user, location.pathname]);
 
 
     // =========================================================
@@ -523,7 +502,6 @@ function Navbar() {
                                     <feMerge>
 
                                         <feMergeNode in="blur" />
-
                                         <feMergeNode in="SourceGraphic" />
 
                                     </feMerge>
@@ -547,7 +525,6 @@ function Navbar() {
                                     <feMerge>
 
                                         <feMergeNode in="goldBlur" />
-
                                         <feMergeNode in="SourceGraphic" />
 
                                     </feMerge>
@@ -737,7 +714,6 @@ function Navbar() {
                                     </div>
 
                                 ) : suggestions.length > 0 ? (
-
 
                                     /* RESULTS */
 
